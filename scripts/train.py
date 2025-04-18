@@ -265,6 +265,15 @@ if __name__ == "__main__":
     ## Running LOOP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     logger.info("***** Running the Loop *****")
 
+    ## Make everything continuous >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    for p in model.parameters():
+        if not p.is_contiguous():
+            with torch.no_grad():
+                p.data = p.data.contiguous()
+
+    ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     if args.train:
         try:
             # Strategy is automatically managed, no need to manually check it here

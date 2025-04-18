@@ -1,0 +1,630 @@
+* [33me61b5ac[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m LoRA finetuning adapted
+* [33m9c8972b[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m)[m feat: cogvideox full fine-tuning (t2v & i2v)
+* [33m0374eaa[m fix & docs: cogvideox t2v lora finetune and inference
+* [33mde9b56d[m fix & docs: cogvideo i2v lora finetune and inference
+* [33m9c66fa7[m fix: support for user-defined random seed to inference flux lora t2i and cogvideo i2v models (#36)
+*   [33mbe459a7[m Merge pull request #34 from samidarko/pre-commit-hooks
+[32m|[m[33m\[m  
+[32m|[m * [33md969873[m poetry lock update
+[32m|[m *   [33mbd8d525[m Merge branch 'main' into pr/samidarko/34
+[32m|[m [34m|[m[32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+* [34m|[m [33mc7d397f[m build: add Docker Compose for local development on macOS with Apple S… (#32)
+* [34m|[m [33mec8a7dd[m update instructions of flux finetune
+[35m|[m * [33mded2a85[m chore: pre-commit hook setup
+[35m|[m * [33m77cb1c5[m build: add Docker Compose for local development on macOS with Apple Silicon
+[35m|[m * [33me84a718[m refactoring: remove argparse in favor of pydantic-settings and subprocess
+[35m|[m * [33m23bb03b[m build: add Docker Compose for local development on macOS with Apple Silicon
+[35m|[m * [33mf797bde[m build: add Docker Compose for local development on macOS with Apple Silicon
+[35m|[m[35m/[m  
+* [33mecd13eb[m fix: environment issues (#31)
+* [33m5115f0a[m style: small modifications
+* [33mc700277[m fix: fix environment issues
+* [33m7a99f5b[m fix: update poetry.lock
+* [33m53db540[m docs: update readme
+* [33m7c61db1[m refactoring: code format
+* [33m920c330[m fix environment issues of Flux training (#29)
+* [33mff77716[m revert shscripts
+* [33m24f34e9[m Test and fix environment and bugs during the migration of Poetry (#28)
+* [33m98579ae[m refactoring: migration to poetry (#25)
+* [33m23a66b5[m fix: argument image_folder (#2) (#26)
+* [33m3e68849[m remove unused files
+* [33m98aa0be[m feat: flux (text-to-image) finetune (#23)
+* [33m7a34a42[m fix: a small bug
+* [33mf4997e2[m refactor: merge two inference_utils.py into one: src.utils.inference_utils; a func rename: load_prompt_file -> load_prompts_from_txt
+* [33mdc408d5[m remove a duplicate file: src.utils.load_weigths.py
+* [33me2a6e56[m add: decoding in the model sampling function
+* [33m91dde0e[m feat: add cogvideox i2v finetune
+* [33m14a4128[m style: modify code comments
+* [33m653ca9e[m fix: argument image_folder (#2) (#24)
+* [33mb913f64[m fix: issue #13
+*   [33mf342676[m Merge pull request #16 from VideoVerses/feat/hunyuan-t2v-inference
+[36m|[m[1;31m\[m  
+[36m|[m *   [33m5d2b802[m Merge branch 'main' into feat/hunyuan-t2v-inference
+[36m|[m [1;32m|[m[36m\[m  
+[36m|[m [1;32m|[m[36m/[m  
+[36m|[m[36m/[m[1;32m|[m   
+* [1;32m|[m [33m4e176fc[m add docker file
+* [1;32m|[m   [33mffc6dfe[m Merge pull request #10 from VideoVerses/mochi
+[1;34m|[m[1;35m\[m [1;32m\[m  
+[1;34m|[m * [1;32m|[m [33m5841d26[m fix: add cogvideo infer back
+[1;34m|[m * [1;32m|[m   [33m2db7517[m Merge branch 'VideoVerses:main' into mochi
+[1;34m|[m [1;36m|[m[31m\[m [1;32m\[m  
+[1;34m|[m * [31m\[m [1;32m\[m   [33m4692778[m fix: modify logic in combine and compare script
+[1;34m|[m [32m|[m[33m\[m [31m\[m [1;32m\[m  
+[1;34m|[m [32m|[m * [31m|[m [1;32m|[m [33m078c44b[m fix: mochi inference and video compare sccript
+[1;34m|[m [32m|[m * [31m|[m [1;32m|[m [33m4b49928[m fix: modify parameter passing in all-in-one inference
+[1;34m|[m [32m|[m * [31m|[m [1;32m|[m [33m6a45433[m fix: create results folder
+[1;34m|[m * [33m|[m [31m|[m [1;32m|[m [33md4273c4[m fix: modify logic in combine and compare script
+[1;34m|[m * [33m|[m [31m|[m [1;32m|[m   [33mffa176b[m Merge branch 'mochi' of https://github.com/VideoVerses/VideoTuna-dev into mochi
+[1;34m|[m [34m|[m[35m\[m [33m\[m [31m\[m [1;32m\[m  
+[1;34m|[m [34m|[m * [33m|[m [31m|[m [1;32m|[m [33m4756486[m Jingye modify the parameter passing of all-in-one inference
+[1;34m|[m * [35m|[m [33m|[m [31m|[m [1;32m|[m [33m04796fb[m fix: modify parameter passing in all-in-one inference
+[1;34m|[m * [35m|[m [33m|[m [31m|[m [1;32m|[m [33m82a5032[m fix: modify parameter passing in all-in-one inference
+[1;34m|[m [35m|[m[35m/[m [33m/[m [31m/[m [1;32m/[m  
+[1;34m|[m * [33m/[m [31m/[m [1;32m/[m [33m2b8af2b[m fix: create results folder
+[1;34m|[m [33m|[m[33m/[m [31m/[m [1;32m/[m  
+[1;34m|[m * [31m|[m [1;32m|[m   [33ma6c029d[m Merge branch 'VideoVerses:main' into mochi
+[1;34m|[m [36m|[m[1;31m\[m [31m\[m [1;32m\[m  
+[1;34m|[m * [1;31m|[m [31m|[m [1;32m|[m [33m55a9cef[m update mochi
+[1;34m|[m * [1;31m|[m [31m|[m [1;32m|[m [33m963a116[m update mochi
+* [1;31m|[m [1;31m|[m [31m|[m [1;32m|[m [33m04da47b[m fix: loss type of vc2
+* [1;31m|[m [1;31m|[m [31m|[m [1;32m|[m [33m20fec21[m avoid creating tensor on cpu to fix performance bottleneck
+* [1;31m|[m [1;31m|[m [31m|[m [1;32m|[m [33m0ec6051[m NaN when applying sqrt() on a negative value
+[31m|[m [1;31m|[m[31m_[m[1;31m|[m[31m/[m [1;32m/[m  
+[31m|[m[31m/[m[1;31m|[m [1;31m|[m [1;32m|[m   
+[31m|[m [1;31m|[m [1;31m|[m * [33m9e33cd6[m docs: update readme with hunyuan information
+[31m|[m [1;31m|[m [1;31m|[m * [33maaa0bf7[m docs: update the checkpoints installation guide of HunyuanVideo
+[31m|[m [1;31m|[m [1;31m|[m * [33m2ddcd12[m feat: add hunyuan t2v inference codes
+[31m|[m [1;31m|[m[31m_[m[1;31m|[m[31m/[m  
+[31m|[m[31m/[m[1;31m|[m [1;31m|[m   
+* [1;31m|[m [1;31m|[m [33mb8e1b9f[m docs: update readme
+* [1;31m|[m [1;31m|[m [33m083d617[m feat: add lora fine-tuning for cogvideox 2b & 5b (#6)
+[1;31m|[m [1;31m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m   
+* [1;31m|[m [33mc8c0b17[m docs: delete save.txt
+* [1;31m|[m [33m935bfa3[m fix: environement to adapt to cogvideoX1.5 inference
+* [1;31m|[m   [33m1f5ef46[m Merge remote-tracking branch 'origin' into feat/cogvideox1.5-inference
+[1;32m|[m[1;33m\[m [1;31m\[m  
+[1;32m|[m * [1;31m|[m [33m7c5e7e9[m docs: finetune videocrafter v2
+[1;32m|[m * [1;31m|[m [33m188c716[m refactor: tools/convert_checkpoint.py
+[1;32m|[m * [1;31m|[m   [33m7d19e72[m Merge pull request #5 from VideoVerses/feat/v2v
+[1;32m|[m [1;34m|[m[1;35m\[m [1;31m\[m  
+[1;32m|[m [1;34m|[m * [1;31m\[m   [33mc42b53f[m Merge branch 'main' into feat/v2v
+[1;32m|[m [1;34m|[m [1;36m|[m[1;34m\[m [1;31m\[m  
+[1;32m|[m [1;34m|[m [1;36m|[m[1;34m/[m [1;31m/[m  
+[1;32m|[m [1;34m|[m[1;34m/[m[1;36m|[m [1;31m|[m   
+[1;32m|[m * [1;36m|[m [1;31m|[m [33m319cbe6[m docs: Update CHECKPOINTS.md
+[1;32m|[m [1;31m|[m [1;36m|[m[1;31m/[m  
+[1;32m|[m [1;31m|[m[1;31m/[m[1;36m|[m   
+[1;32m|[m [1;31m|[m * [33mb1d1878[m fix: download sd ckpt command
+[1;32m|[m [1;31m|[m * [33mdf0e477[m add: v2v-modelscope
+* [1;31m|[m [31m|[m [33m8395745[m docs: update ckpt for cogvideox1.5
+* [1;31m|[m [31m|[m [33m3f89d40[m refactor: change the output format
+* [1;31m|[m [31m|[m [33mbff188b[m code update for inference_cogVideo_sat_refactor and arguments
+* [1;31m|[m [31m|[m   [33m99b2fb0[m merge conflict
+[32m|[m[33m\[m [1;31m\[m [31m\[m  
+[32m|[m * [1;31m|[m [31m|[m [33md5c784f[m code update for cogvideox1.5
+[32m|[m [1;31m|[m[1;31m/[m [31m/[m  
+* [1;31m/[m [31m/[m [33mb458042[m code refactor: cogvideox1.5_5b, change the code for download cogvideo ckpts, change the requirements.txt to satisfy with cogvideo
+[1;31m|[m[1;31m/[m [31m/[m  
+* [31m|[m [33m889bf7d[m minor modify title
+* [31m|[m [33m6f7f42b[m update inference cost
+* [31m|[m [33m79030ca[m add str_to_bool_or_str function in lightning_utils
+[31m|[m[31m/[m  
+* [33mf516f1f[m Update CHECKPOINTS.md
+* [33m3e15ebb[m Update CHECKPOINTS.md
+* [33mb6cafaa[m Update README.md
+* [33mf61dd93[m Update README.md
+* [33m4c3ed09[m modify the badge order
+* [33mb135c38[m add badge
+* [33m6f9044a[m remove assets
+* [33m50c3bd8[m Update README.md
+* [33mc186bf7[m Update README.md
+* [33m376c721[m Update README.md
+* [33m2147c14[m Update README.md
+* [33m6abce5a[m update wechat_group.jpg
+* [33m5ce865e[m update
+* [33m7adaf70[m update
+* [33m30a2fb7[m update readme
+* [33m0f2bcac[m modify readme regarding the code structure section
+* [33m40dde3d[m Add demo about video comparison
+* [33m9e0e354[m Update comparison script
+* [33mf1c5c2b[m Update comparison script
+* [33mc1cca73[m docs: update datasets readme
+* [33m457c1b3[m docs: update main readme
+* [33m0505c62[m update config
+* [33mf1e3a6e[m update config
+* [33me5742ba[m del unnecessary assets
+* [33mc4969e9[m Update README.md
+* [33m92a2f44[m Update README.md
+* [33mb094cd6[m add assets
+* [33m2f632cf[m Add files via upload
+* [33m0a875cb[m Add files via upload
+* [33m107b54f[m Update README.md
+* [33m39b055a[m Update README.md
+* [33m8fcabc0[m Add files via upload
+* [33m3860525[m Delete fkcloseshot1.gif
+* [33m09db7f7[m Delete fkanimal2.gif
+* [33m116ca78[m Add files via upload
+* [33m121aa51[m add: assets
+* [33m7edb8cb[m modify chinese comment
+* [33m6621012[m modify chinese comment
+* [33m303b894[m del: assets
+*   [33m91923a1[m Merge pull request #21 from VideoVerses/prerelease
+[34m|[m[35m\[m  
+[34m|[m *   [33m7bdc32a[m Merge branch 'main' into prerelease
+[34m|[m [36m|[m[34m\[m  
+[34m|[m [36m|[m[34m/[m  
+[34m|[m[34m/[m[36m|[m   
+* [36m|[m [33mebc793f[m Update the link of the animated logo
+* [36m|[m [33me52c129[m Update README.md
+* [36m|[m [33m79736d9[m Update README.md
+* [36m|[m [33m8c0db8c[m Update README.md
+[1;31m|[m * [33mf00c7cd[m fix: dc config
+[1;31m|[m * [33m6f6f4df[m add convert_checkpoint.py
+[1;31m|[m * [33m0dd1a0a[m remove files
+[1;31m|[m * [33m9e880b1[m update config
+[1;31m|[m * [33me66da8d[m docs: update readme
+[1;31m|[m * [33mc84d2dc[m remove some config files
+[1;31m|[m * [33m5bdeb8f[m update config and remove files
+[1;31m|[m * [33m5b69bf2[m update
+[1;31m|[m * [33m21c539f[m update config
+[1;31m|[m * [33m1df5357[m update config
+[1;31m|[m * [33mabda3f8[m docs: update readme
+[1;31m|[m *   [33mc025e72[m Merge branch 'release' of https://github.com/VideoVerses/VideoTuna into release
+[1;31m|[m [1;32m|[m[1;33m\[m  
+[1;31m|[m [1;32m|[m * [33m705cde5[m update config and inference script
+[1;31m|[m * [1;33m|[m [33m432d963[m update config and inference script
+[1;31m|[m[1;31m/[m [1;33m/[m  
+* [1;33m|[m [33m77005d6[m Update README.md
+* [1;33m|[m [33m6c395a0[m Create LICENSE
+* [1;33m|[m [33m71aa8e8[m Update README.md
+* [1;33m|[m [33m4d1e857[m Update README.md
+* [1;33m|[m [33m5b4aec6[m Update README.md
+* [1;33m|[m [33m409d909[m Create compare_i2v.sh
+* [1;33m|[m [33ma0a208d[m Update compare.sh
+* [1;33m|[m [33ma6c1efd[m Create inference_utils.py
+* [1;33m|[m [33mf4723d0[m Update compare.sh
+* [1;33m|[m [33m7c10f27[m Update README.md
+[1;33m|[m[1;33m/[m  
+* [33mafc9f68[m refactor: remove files
+* [33m358410b[m Add flux environment
+* [33m5ff1283[m replace with a smaller gif logo
+* [33m7b95ba6[m Add files via upload
+* [33m1b3ffda[m delete useless
+* [33mb5974ac[m update yaml path
+* [33mf68b541[m update time
+* [33maa9e87b[m delete png img
+* [33mf742263[m update
+* [33mc4e7a47[m update readme
+* [33mb4342a0[m update readme
+* [33m2cef655[m docs: update readme
+* [33m84a0607[m docs: move and update evaluation docs
+* [33m25d89ad[m Update README.md
+* [33m5b8543e[m add tune animated logo
+*   [33meec43bb[m Merge pull request #20 from VideoVerses/release
+[1;34m|[m[1;35m\[m  
+[1;34m|[m *   [33m2188a27[m Merge pull request #19 from VideoVerses/dev/refactor
+[1;34m|[m [1;36m|[m[31m\[m  
+[1;34m|[m [1;36m|[m *   [33m9d3e186[m Merge branch 'release' into dev/refactor
+[1;34m|[m [1;36m|[m [32m|[m[1;36m\[m  
+[1;34m|[m [1;36m|[m [32m|[m[1;36m/[m  
+[1;34m|[m [1;36m|[m[1;36m/[m[32m|[m   
+[1;34m|[m [1;36m|[m *   [33m1a4764d[m Merge pull request #17 from VideoVerses/dev/refactor_debug
+[1;34m|[m [1;36m|[m [34m|[m[35m\[m  
+[1;34m|[m [1;36m|[m [34m|[m *   [33maba5f9b[m Merge branch 'dev/refactor' into dev/refactor_debug
+[1;34m|[m [1;36m|[m [34m|[m [36m|[m[34m\[m  
+[1;34m|[m [1;36m|[m [34m|[m [36m|[m[34m/[m  
+[1;34m|[m [1;36m|[m [34m|[m[34m/[m[36m|[m   
+[1;34m|[m [1;36m|[m * [36m|[m [33m5e51239[m add support to peft adapters. HRAmodel is tested.
+[1;34m|[m [1;36m|[m * [36m|[m [33mfaa3f2f[m remove sat based codes. do some refactor and only save diffuser based cogvideo code.
+[1;34m|[m [1;36m|[m [1;31m|[m * [33m825ffa1[m refactor: correct the format of infere cogvideo
+[1;34m|[m [1;36m|[m [1;31m|[m * [33meba6808[m merge pl2.x
+[1;34m|[m [1;36m|[m [1;31m|[m * [33m6eb56c8[m fixed: Fix bug during training the opensorav10
+[1;34m|[m [1;36m|[m [1;31m|[m * [33m6189f44[m fixed: Fix bud during the opensorav10 inference due to the param 'given_betas'
+[1;34m|[m [1;36m|[m [1;31m|[m * [33mf54b1c4[m fix: fix bug in iddpm3d init
+[1;34m|[m [1;36m|[m [1;31m|[m * [33m53fc88c[m reorg iddpm
+[1;34m|[m [1;36m|[m [1;31m|[m[1;31m/[m  
+[1;34m|[m [1;36m|[m *   [33m97f7034[m Merge pull request #16 from VideoVerses/cogvideo-hfpl
+[1;34m|[m [1;36m|[m [1;32m|[m[1;33m\[m  
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mc7c7e28[m fix minor bugs
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m60313a0[m correct NaN in train. add a unit test for text encoder where NaN happens during train with cuda.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33me3135be[m a new train cogvideo diffusers
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mbe3db1f[m correct import path
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m65ade00[m cogvideo dataset
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m86c2361[m change utils import path to src.utils
+[1;34m|[m [1;36m|[m [1;32m|[m * [33ma1e5ea3[m remove pdb
+[1;34m|[m [1;36m|[m [1;32m|[m * [33ma4b9e17[m custom inputs files
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m49b4621[m a tinyy toy dataset of 1 video but duplicat 300 times following oriinal cogvideo lora finetune format.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m810dc0a[m minor fix: the lora args is not necessary.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m5831afd[m a runable trianing pipeline of cogvideo built on pl and diffusers. We can choose to full finetune or lora finetune simple change configs in config.yaml. Only support l1 loss computation(still contain nan issue). Still contain some dtype and device issue. Still use the original dataset instead of our dataset. support train on a tiny dataset.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mf6e974d[m a branch new config.yaml compatitable with diffusers based cogvideo. the model only clearly only contain sub modules of (denoiser,vae,text_encoder,scheduler), which is more user friendly than original ones but may casue it hard to define new settings.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m1e63499[m inference dirver
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m7311efa[m cogvideo workflow that support inference using diffusers checkpoint. The core class CogVideoXWorkflow is expected to inheret from DDPM but DDPM has lots of init args related to schedulers.Due to this issue, CogVideoXWorkflow is subclass of lightningmodule.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m909a459[m add instantiate code from diffusers class( use from_pretrained for initialization)
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m6ccd68d[m everything the same with scripts/inference.py except
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m936f627[m draft: diffusers based cogvideo sampling pipeline. mostly inherented from diffuser cogvideoxpipeline. after this script is ready, we could do more refactor to align with ddpm.
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m626d564[m update inference opensora v10 shscripts
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m0322a0c[m update readme: evaluation results
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m89c06f0[m update script
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m89d7436[m upload the code to visualize and compare different methods
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mb4d50d6[m Add files via upload
+[1;34m|[m [1;36m|[m [1;32m|[m * [33meed26a8[m Create combine.py
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m074503c[m Create check_input.py
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mb2e61a8[m update eval scripts and saving files
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m15a51d5[m Add caption
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m2444c46[m Add scenecut.py
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mcab372f[m update data/process
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m254f529[m update vc-ft inference script
+[1;34m|[m [1;36m|[m [1;32m|[m * [33mc86dcff[m update opensorav10 inference script
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m907dab0[m update readme
+[1;34m|[m [1;36m|[m [1;32m|[m * [33m2d6fcdd[m update inference_for_eval.sh
+[1;34m|[m [1;36m|[m * [1;33m|[m [33mb61c673[m refactor: rename to xxFlow; verified DC
+[1;34m|[m [1;36m|[m * [1;33m|[m [33m8f1df74[m refactor: extract diffusion shedulers; verified on vc2
+[1;34m|[m [1;36m|[m [1;33m|[m[1;33m/[m  
+[1;34m|[m [1;36m|[m * [33m442bb01[m feat: add customed prompts
+[1;34m|[m [1;36m|[m * [33m4469a7c[m refactor: mv scripts/**utils.py to src/utils
+[1;34m|[m [1;36m|[m * [33m24c3a13[m refactor: mv data/ and utils/ to src/; add gradient checkpointing for opensora
+[1;34m|[m [1;36m|[m * [33mebc97bd[m refactor: extract src/base
+* [1;36m|[m [1;33m|[m [33m837a37c[m Add files via upload
+* [1;36m|[m [1;33m|[m [33m8729322[m Update config.env
+* [1;36m|[m [1;33m|[m [33me03038e[m Add files via upload
+* [1;36m|[m [1;33m|[m [33md23a553[m Update README.md
+* [1;36m|[m [1;33m|[m [33m994908d[m Update multidatabackend.json
+* [1;36m|[m [1;33m|[m [33m0c149dc[m Update config.env
+* [1;36m|[m [1;33m|[m [33m08b5df3[m Update train.sh
+* [1;36m|[m [1;33m|[m [33m256afd0[m Update train.py
+* [1;36m|[m [1;33m|[m [33m6619e29[m add gif
+* [1;36m|[m [1;33m|[m [33m9c87353[m update readme
+* [1;36m|[m [1;33m|[m [33m45591e3[m Update model path
+[1;36m|[m[1;36m/[m [1;33m/[m  
+* [1;33m|[m   [33m58375d4[m Merge branch 'main' of https://github.com/VideoVerses/VideoTuna
+[1;34m|[m[1;35m\[m [1;33m\[m  
+[1;34m|[m * [1;33m|[m [33mb2de0e4[m update readme
+* [1;35m|[m [1;33m|[m [33mc78b6eb[m fixed: fix bug loading ckpt for opensora
+[1;35m|[m[1;35m/[m [1;33m/[m  
+* [1;33m|[m [33mc2524ad[m delete useless
+* [1;33m|[m [33med9cdac[m Update README.md
+* [1;33m|[m [33mfd5ee18[m Add contributors
+* [1;33m|[m [33m57df523[m Add files via upload
+* [1;33m|[m [33m4f77ee9[m Add files via upload
+* [1;33m|[m [33ma187bde[m add wechat group png
+* [1;33m|[m [33m9e01373[m add wechat group badge
+* [1;33m|[m [33m0df952b[m Update README.md
+* [1;33m|[m [33m275f848[m add discord badge
+* [1;33m|[m [33m03f4d55[m add github star badge
+* [1;33m|[m [33m72941b1[m add github badge
+* [1;33m|[m [33m5f6ac30[m re-organize
+* [1;33m|[m [33m094fedc[m Update the star history
+* [1;33m|[m [33mff5f063[m docs: update readme
+* [1;33m|[m [33med50108[m fixed: Fix bug during loading pretrained ckpt of opensora
+* [1;33m|[m [33m4d8aa02[m Update Demo (#18)
+* [1;33m|[m [33m7e8d6b8[m update face videos: update input caption
+* [1;33m|[m [33m31ce651[m update face videos: update input
+* [1;33m|[m [33m0e5f291[m update face videos:fix link
+* [1;33m|[m [33mc8914b4[m update face videos
+* [1;33m|[m [33m30a32cc[m update face video6
+* [1;33m|[m [33m17ce591[m update face video5
+* [1;33m|[m [33m8644360[m update face video4
+* [1;33m|[m [33md0b07cc[m update face video3
+* [1;33m|[m [33m178f238[m update face video2
+* [1;33m|[m [33m3d42ba1[m update face video
+* [1;33m|[m [33mf1c64ce[m fix readme format
+* [1;33m|[m [33m65d1dad[m reorganize vae demos.2
+* [1;33m|[m [33m47e54ed[m reorganize vae demos.
+* [1;33m|[m [33m45ffcab[m Update VAE example 2
+* [1;33m|[m [33ma0b099e[m Update VAE example
+* [1;33m|[m [33ma304f7d[m test demo format again
+* [1;33m|[m [33m84a27f1[m test demo format
+* [1;33m|[m [33mefec8ec[m fix video
+* [1;33m|[m [33m570cd07[m update demo embeds
+* [1;33m|[m [33m7bb92c1[m update demo
+* [1;33m|[m [33mdb3a383[m update
+* [1;33m|[m [33mdad20d2[m feat: inference flux with a file of prompts
+* [1;33m|[m   [33m08359b4[m Merge pull request #15 from VideoVerses/revert-14-revert-13-pl_upgrade0922
+[1;36m|[m[31m\[m [1;33m\[m  
+[1;36m|[m * [1;33m|[m [33m84c9af6[m revise train.py
+[1;36m|[m * [1;33m|[m [33md2d97ee[m update util/callbacks. rename train_backup
+[1;36m|[m * [1;33m|[m   [33m7ff3d9c[m Merge branch 'main' into revert-14-revert-13-pl_upgrade0922
+[1;36m|[m [32m|[m[1;36m\[m [1;33m\[m  
+[1;36m|[m [32m|[m[1;36m/[m [1;33m/[m  
+[1;36m|[m[1;36m/[m[32m|[m [1;33m|[m   
+* [32m|[m [1;33m|[m [33mfb2f4cf[m update readme
+* [32m|[m [1;33m|[m [33ma88653d[m update requirement.txt
+* [32m|[m [1;33m|[m [33mfd8895b[m fix: font file default location
+* [32m|[m [1;33m|[m [33m31b60c8[m fix: cogvideo inference in compare.sh
+* [32m|[m [1;33m|[m [33md3539f5[m feat: sample multiple videos via cogvideox t2v and i2v
+* [32m|[m [1;33m|[m [33m74d548e[m docs: reorgnize
+* [32m|[m [1;33m|[m [33m00b9d3e[m docs: data/readme.md
+* [32m|[m [1;33m|[m [33mb544c39[m docs: data/readme.md
+* [32m|[m [1;33m|[m [33m6349225[m remove: num_timesteps_cond, make_cond_schedule(), self.shorten_cond_schedule in config.yaml, ddom3d.py, iddpm3d.py.
+* [32m|[m [1;33m|[m [33mc127f13[m update gitignore
+* [32m|[m [1;33m|[m [33m50c33bd[m docs: revise readme
+* [32m|[m [1;33m|[m [33m2f6d618[m update readme
+[33m|[m * [1;33m|[m [33m689ecec[m Revert "Revert "revise the code to adapt to pytorch lightning 2.4 ver""
+[33m|[m[33m/[m [1;33m/[m  
+* [1;33m|[m   [33m8c5eb1f[m Merge pull request #14 from VideoVerses/revert-13-pl_upgrade0922
+[34m|[m[35m\[m [1;33m\[m  
+[34m|[m * [1;33m|[m [33mbb0ff5c[m Revert "revise the code to adapt to pytorch lightning 2.4 ver"
+[34m|[m[34m/[m [1;33m/[m  
+* [1;33m|[m   [33m8b75826[m Merge pull request #13 from VideoVerses/pl_upgrade0922
+[36m|[m[1;31m\[m [1;33m\[m  
+[36m|[m * [1;33m|[m [33m0fd43c2[m revise the code to adapt to pytorch lightning 2.4 ver
+* [1;31m|[m [1;33m|[m [33m5480e6f[m fix: inference vc1-1024 bug
+* [1;31m|[m [1;33m|[m   [33mdd478ab[m Merge branch 'cogVideo' into 'main'
+[1;32m|[m[1;33m\[m [1;31m\[m [1;33m\[m  
+[1;32m|[m * [1;31m|[m [1;33m|[m [33md2e8399[m Remove the redundant file readme_cogVideo.md and remove empty file cogVideo
+[1;32m|[m * [1;31m|[m [1;33m|[m [33m9fc89f8[m Revert "Remove cogVideo file and remove cogVideo/readme_cogVideo.md"
+[1;32m|[m * [1;31m|[m [1;33m|[m [33mb1e783e[m Remove cogVideo file and remove cogVideo/readme_cogVideo.md
+* [1;33m|[m [1;31m|[m [1;33m|[m [33m9dff2a9[m update readme
+* [1;33m|[m [1;31m|[m [1;33m|[m [33m842dc33[m style: change the default ckpt location of cogvideox
+[1;33m|[m[1;33m/[m [1;31m/[m [1;33m/[m  
+* [1;31m|[m [1;33m|[m [33m6ff1d52[m fix: a minor bug
+* [1;31m|[m [1;33m|[m   [33ma522eb3[m Merge branch 'main' into cogVideo
+[1;34m|[m[1;35m\[m [1;31m\[m [1;33m\[m  
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m9b9be6b[m update readme
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m5f0d44e[m cogvideo environment diffusers version update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m92bda6c[m Update inference_cogVideo_diffusers.py
+[1;34m|[m * [1;31m|[m [1;33m|[m [33mb738659[m environment and readme update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m677cfe5[m update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m75fd092[m readme update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m7467e0a[m readme update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33md1842ea[m cogvideo 5b diffuser and sat inference, and finetune update
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m27be0fd[m 5b version
+[1;34m|[m * [1;31m|[m [1;33m|[m [33m7d6fc9a[m readme_cogVideo format change
+[1;34m|[m * [1;31m|[m [1;33m|[m [33ma683660[m sat finetune
+[1;34m|[m [1;31m|[m[1;31m/[m [1;33m/[m  
+[1;34m|[m * [1;33m|[m [33me228419[m Update README.md
+[1;34m|[m * [1;33m|[m [33mfea58cb[m Update README.md
+* [1;35m|[m [1;33m|[m   [33mcd53ed6[m Merge branch 'main' into cogVideo
+[1;36m|[m[31m\[m [1;35m\[m [1;33m\[m  
+[1;36m|[m * [1;35m|[m [1;33m|[m [33m2b84711[m update readme
+[1;36m|[m [1;35m|[m[1;35m/[m [1;33m/[m  
+[1;36m|[m * [1;33m|[m [33m60496f9[m update: load_model_checkpoint with load safetensors [ongoing]
+[1;36m|[m * [1;33m|[m [33m61226a1[m update readme
+[1;36m|[m * [1;33m|[m [33m32c8a59[m fix typo of load_weights
+[1;36m|[m * [1;33m|[m [33mff5d92c[m update inference opensora v10 shscripts
+[1;36m|[m * [1;33m|[m [33mebc533d[m update readme: evaluation results
+[1;36m|[m * [1;33m|[m [33m2cf545f[m update script
+[1;36m|[m * [1;33m|[m [33m2469252[m upload the code to visualize and compare different methods
+[1;36m|[m * [1;33m|[m [33m3e6766d[m Add files via upload
+[1;36m|[m * [1;33m|[m [33mc291b0c[m Create combine.py
+[1;36m|[m * [1;33m|[m [33m36daffe[m Create check_input.py
+[1;36m|[m * [1;33m|[m [33m585876c[m update eval scripts and saving files
+[1;36m|[m * [1;33m|[m [33m07b95ef[m Add caption
+[1;36m|[m * [1;33m|[m [33m1898407[m Add scenecut.py
+[1;36m|[m * [1;33m|[m [33md361761[m update data/process
+[1;36m|[m * [1;33m|[m [33m8da9ebf[m update vc-ft inference script
+[1;36m|[m * [1;33m|[m [33m0f61de3[m update opensorav10 inference script
+[1;36m|[m * [1;33m|[m [33m3efaa02[m update readme
+[1;36m|[m * [1;33m|[m [33mb450273[m update inference_for_eval.sh
+[1;36m|[m [1;33m|[m[1;33m/[m  
+[1;36m|[m * [33m8459f34[m refactor: cleaned opensora
+[1;36m|[m * [33m77c6391[m fixed: training launch scripts
+[1;36m|[m * [33m01182eb[m update readme: infer flux
+[1;36m|[m * [33m07537ee[m update readme: infer vc2
+[1;36m|[m * [33m060b921[m update readme: todos
+[1;36m|[m * [33mdb0f267[m update readme: fix checkpoint downloading
+[1;36m|[m *   [33m7b18413[m Merge branch 'main' of https://github.com/VideoVerses/VideoTuna
+[1;36m|[m [32m|[m[33m\[m  
+[1;36m|[m [32m|[m *   [33mbed1cc4[m Merge branch 'docs'
+[1;36m|[m [32m|[m [34m|[m[35m\[m  
+[1;36m|[m [32m|[m [34m|[m * [33mcc42a96[m update readme
+[1;36m|[m [32m|[m [34m|[m * [33mab1f4de[m update alignment readme
+[1;36m|[m [32m|[m [34m|[m * [33m283a759[m update eval readme
+[1;36m|[m [32m|[m [34m|[m * [33m6c40541[m update eval readme
+[1;36m|[m [32m|[m [34m|[m *   [33m20b2e7e[m Merge branch 'main' into docs
+[1;36m|[m [32m|[m [34m|[m [36m|[m[1;31m\[m  
+[1;36m|[m [32m|[m [34m|[m * [1;31m|[m [33meecae9e[m fix detectron2 install
+[1;36m|[m [32m|[m [34m|[m * [1;31m|[m [33mea0aa26[m update readm
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33mbb22051[m update readme
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33m2ffde87[m update alignment readme
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33mf1806c2[m update eval readme
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33m3b68c2f[m update eval readme
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33mc4020b8[m fix detectron2 install
+[1;36m|[m [32m|[m * [1;31m|[m [1;31m|[m [33maf82ef1[m update readm
+[1;36m|[m * [1;31m|[m [1;31m|[m [1;31m|[m [33m0d5c836[m cogvideo environment update and readme_cogvideo file format update
+[1;36m|[m [1;31m|[m[1;31m/[m [1;31m/[m [1;31m/[m  
+[1;36m|[m * [1;31m|[m [1;31m|[m [33m2ab0539[m refacor cogvideo. remove useless files. merged readme(need more modifaction).
+[1;36m|[m * [1;31m|[m [1;31m|[m [33md141497[m refactor src.sat to src.cogvide
+[1;36m|[m * [1;31m|[m [1;31m|[m [33m80ad521[m fix bug when nprompts//bs!=0
+[1;36m|[m [1;31m|[m [1;31m|[m[1;31m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;31m|[m   
+[1;36m|[m * [1;31m|[m   [33m1eeab04[m Merge pull request #11 from VideoVerses/dev/diffusion
+[1;36m|[m [1;31m|[m[1;33m\[m [1;31m\[m  
+[1;36m|[m [1;31m|[m [1;33m|[m[1;31m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;33m|[m   
+[1;36m|[m [1;31m|[m *   [33m2a18442[m Merge branch 'main' into dev/diffusion
+[1;36m|[m [1;31m|[m [1;34m|[m[1;31m\[m  
+[1;36m|[m [1;31m|[m [1;34m|[m[1;31m/[m  
+[1;36m|[m [1;31m|[m[1;31m/[m[1;34m|[m   
+[1;36m|[m * [1;34m|[m [33mf1554b8[m fix open_clip_torch version
+[1;36m|[m * [1;34m|[m [33m1a66699[m update readme
+[1;36m|[m * [1;34m|[m [33mb532ea0[m fix inference scripts arguments.
+[1;36m|[m * [1;34m|[m [33mc0a5749[m Revert "Update train.py"
+[1;36m|[m * [1;34m|[m   [33m559bb49[m Merge pull request #9 from VideoVerses/cogvideo-pl
+[1;36m|[m [1;36m|[m[31m\[m [1;34m\[m  
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m439336b[m Delete scripts/train.py
+[1;36m|[m [1;36m|[m * [1;34m|[m [33md107d86[m Update train.py
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m5e1cd0c[m Delete src/sat/configs/inference.yaml
+[1;36m|[m [1;36m|[m * [1;34m|[m [33ma9a9dd1[m Delete src/sat/configs/cogvideox_2b.yaml
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m4015563[m Delete src/sat/inference_cogVideo_sat.sh
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m95d4adf[m fix inject lora. remove some irrelvatnt files.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m8512957[m fix conflicts with train.py
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m3eb71c3[m customize checkpoint IO code.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33md4d93d0[m change modelcheckpoints paths to standard folder.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33ma1b5ec2[m add a toy dataset
+[1;36m|[m [1;36m|[m * [1;34m|[m [33md2ec66c[m minor fix readme.md
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m51702da[m cogvideo pl inference
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m5474e98[m rebase on main
+[1;36m|[m [1;36m|[m * [1;34m|[m [33mf0e2d76[m Validation of training code.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m79a676b[m Fix pytorch-lightning based cogvideo inference
+[1;36m|[m [1;36m|[m * [1;34m|[m [33mdc73e8f[m customize config with realpath on workstation 4
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m37a171d[m fix merge configs and diffusion videos.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33ma453693[m First trainable version of Cogvideo-pl.
+[1;36m|[m [1;36m|[m * [1;34m|[m [33mb318515[m customized configs and train scrpit
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m682916e[m readme_cogVideo format change
+[1;36m|[m [1;36m|[m * [1;34m|[m [33ma68552b[m sat finetune
+[1;36m|[m [1;36m|[m * [1;34m|[m [33mf85ae0c[m customized configs and train scrpit
+[1;36m|[m [1;36m|[m * [1;34m|[m [33m995d8be[m readme_cogVideo format change
+[1;36m|[m [1;36m|[m * [1;34m|[m [33mf6feb67[m sat finetune
+[1;36m|[m * [31m|[m [1;34m|[m [33m58a3eb3[m fix a minor bug
+[1;36m|[m * [31m|[m [1;34m|[m   [33m22be00c[m Merge pull request #8 from VideoVerses/rlhf-baseline
+[1;36m|[m [32m|[m[33m\[m [31m\[m [1;34m\[m  
+[1;36m|[m [32m|[m * [31m|[m [1;34m|[m [33m373b5eb[m fix: reward model path
+[1;36m|[m [32m|[m * [31m|[m [1;34m|[m [33m6a2f4a4[m remove dependencies on importlib_resources to make it more easy to understand.
+[1;36m|[m [32m|[m * [31m|[m [1;34m|[m [33md26c720[m add pretrained reward models
+[1;36m|[m * [33m|[m [31m|[m [1;34m|[m [33m8d2e37d[m fix env bug on h800 & 5880
+[1;36m|[m * [33m|[m [31m|[m [1;34m|[m [33m1e25b1e[m minor fix a bug
+[1;36m|[m * [33m|[m [31m|[m [1;34m|[m [33m573611d[m Merge pull request #6 from VideoVerses/rlhf-baseline
+[1;36m|[m [34m|[m[33m\[m[33m|[m [31m|[m [1;34m|[m 
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m4cf7628[m add a simple environment description.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m582936a[m custom filepath
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m2259f57[m reorganize rlhf utils. delete core folder
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m28e010f[m reorganize dataset to input.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m8ebbfe1[m slight modified a config..
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m069d312[m reorganize rlhf utils
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m0476261[m remove Chinese comments.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33mca14806[m delete unrelated demos.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m5e2ce13[m fix: changed some lib import path
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33md918789[m reorganize and rename some filepaths and fix some format issues.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33mbcb1307[m rebase on peft lora.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m4e77464[m Add: rlhf finetuning code.
+[1;36m|[m [34m|[m * [31m|[m [1;34m|[m [33m1b7fbc2[m rlhf backbone
+[1;36m|[m [34m|[m [31m|[m[31m/[m [1;34m/[m  
+[1;36m|[m * [31m|[m [1;34m|[m   [33me624067[m Merge pull request #7 from VideoVerses/vript_anno
+[1;36m|[m [36m|[m[1;31m\[m [31m\[m [1;34m\[m  
+[1;36m|[m [36m|[m * [31m|[m [1;34m|[m [33m17baea1[m support: convert vript anno to our anno format
+[1;36m|[m [36m|[m [31m|[m[31m/[m [1;34m/[m  
+[1;36m|[m * [31m/[m [1;34m/[m [33mca2df1c[m minor fix
+[1;36m|[m [31m|[m[31m/[m [1;34m/[m  
+[1;36m|[m * [1;34m|[m [33m5a4bedb[m Update inference.py by adding an environment variable
+[1;36m|[m * [1;34m|[m [33m8e3d2b9[m open_clip_torch degrade from 2.24 -> 2.12
+[1;36m|[m * [1;34m|[m [33mc3c3dda[m add train script to shscripts; now trainning script under config/ can be safely removed, but still keeps them for now
+[1;36m|[m * [1;34m|[m [33ma4b5085[m fix tiny errors of lora merge
+[1;36m|[m * [1;34m|[m   [33m6ae41af[m Merge pull request #4 from VideoVerses/peft_lora
+[1;36m|[m [1;32m|[m[1;33m\[m [1;34m\[m  
+[1;36m|[m [1;32m|[m * [1;34m|[m [33m5deec6b[m fix: configure optimizers. check lora parameters. cleaned lora_load_checkpoint.
+[1;36m|[m [1;32m|[m * [1;34m|[m [33mc237d35[m fix 'metadata_catption'
+[1;36m|[m [1;32m|[m * [1;34m|[m [33m1cfd217[m Feature: push lora back to DDPM. So that all the subclass will be able to inject_lora(). The inference is tested.
+[1;36m|[m [1;32m|[m * [1;34m|[m [33me62fe6e[m Add a Readme to ilustrate the basic usage of LoRA. Custom config for test.
+[1;36m|[m [1;32m|[m * [1;34m|[m [33mbba07f3[m Validation: LoraModelCheckpoint is correct. Add: inference configs and inference code. Changed: the two lines in ddim_sampling in commit f0a96d6. The dtype and VideoReader is not compatitable with vc2.  Notice: there is realpaths in files so that reproductivity is ensured. We will commit a clean version before merge.
+[1;36m|[m [1;32m|[m * [1;34m|[m [33mb22af7c[m commit test code : path set to true files.
+[1;36m|[m [1;32m|[m * [1;34m|[m [33mee0500e[m ADD PEFT LORA. 1. add lora args to config.yaml. 2. add lora_ckpt option in train.py and run.sh. 3. add lora inject function in LatentDIffusion and customized optimizer setting. 4. add a LoraModelCheckpoint Callback Class for saving lora params. Need to be set in config.yaml.
+[1;36m|[m * [1;33m|[m [1;34m|[m [33m8dc943b[m update readme
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m9832bff[m feat: new argments 'standard_vbench' for inference.py to save video in standard vbench evaluation format
+[1;36m|[m [1;33m|[m [1;33m|[m * [33mcadf8f1[m Fix bugs in datasets.py
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m4204e2a[m update inference of opensora v1.0
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m7bb46c1[m fixed: _is_valid_data
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m13cd144[m fixed: typing errors and test errors
+[1;36m|[m [1;33m|[m [1;33m|[m * [33mfb5724c[m fixed: typing errors and test errors
+[1;36m|[m [1;33m|[m [1;33m|[m * [33mae63b91[m fixed: typing errors and test errors
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m860327d[m clean: some useless comments are removed
+[1;36m|[m [1;33m|[m [1;33m|[m * [33mad6b9a7[m refactor: dataset and transforms
+[1;36m|[m [1;33m|[m [1;33m|[m * [33mf059b31[m update datasets.py
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m287cef7[m Fix datasets.py
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m357117f[m update datasets
+[1;36m|[m [1;33m|[m [1;33m|[m * [33m9d12d2a[m update opensora training
+[1;36m|[m [1;33m|[m [1;33m|[m *   [33m95e3302[m Merge remote-tracking branch 'origin/dev/diffusion' into dev/diffusion
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m[1;35m\[m  
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m * [33m43667cf[m Fix scale_factor in VideoAutoencoderKL
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m * [33m1ee2b9c[m Refactor the VAE of opensora
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m * [33m81bbc8e[m Fix bugs of __init__ in SpacedDiffusion
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m * [33m69694bd[m Add SpacedDiffusion
+[1;36m|[m [1;33m|[m [1;33m|[m [1;34m|[m * [33mbadc2a0[m Fisrt attempt, refactor the iddpm of opensora
+[1;36m|[m [1;33m|[m [1;33m|[m * [1;35m|[m [33mfe265fe[m Fix scale_factor in VideoAutoencoderKL
+[1;36m|[m [1;33m|[m [1;33m|[m * [1;35m|[m [33maf8cd4f[m Refactor the VAE of opensora
+[1;36m|[m [1;33m|[m [1;33m|[m * [1;35m|[m [33mac3113c[m Fix bugs of __init__ in SpacedDiffusion
+[1;36m|[m [1;33m|[m [1;33m|[m * [1;35m|[m [33mef74848[m Add SpacedDiffusion
+[1;36m|[m [1;33m|[m [1;33m|[m * [1;35m|[m [33m03a97fd[m Fisrt attempt, refactor the iddpm of opensora
+[1;36m|[m [1;33m|[m [1;33m|[m[1;33m/[m [1;35m/[m  
+[1;36m|[m [1;33m|[m[1;33m/[m[1;33m|[m [1;35m|[m   
+[1;36m|[m * [1;33m|[m [1;35m|[m [33m2eb945b[m update: add_trainer_args_to_parser
+[1;36m|[m [1;35m|[m [1;33m|[m[1;35m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[1;33m|[m   
+[1;36m|[m * [1;33m|[m [33mc254ef8[m reorganize readme
+[1;36m|[m [1;33m|[m[1;33m/[m  
+[1;36m|[m * [33m0f6f8df[m Update README.md
+[1;36m|[m * [33m6309f3d[m Update requirements.txt
+[1;36m|[m *   [33m342da4b[m Merge pull request #1 from VideoVerses/environment
+[1;36m|[m [1;36m|[m[31m\[m  
+[1;36m|[m [1;36m|[m *   [33ma188445[m Merge branch 'main' into environment
+[1;36m|[m [1;36m|[m [32m|[m[1;36m\[m  
+[1;36m|[m [1;36m|[m [32m|[m[1;36m/[m  
+[1;36m|[m [1;36m|[m[1;36m/[m[32m|[m   
+[1;36m|[m [1;36m|[m * [33mad12466[m update requirements.txt
+* [1;36m|[m [33m|[m [33mce83ce3[m cogvideo environment diffusers version update
+* [1;36m|[m [33m|[m [33m742060a[m Update inference_cogVideo_diffusers.py
+* [1;36m|[m [33m|[m [33mc3a9d92[m environment and readme update
+* [1;36m|[m [33m|[m [33mb520f07[m update
+* [1;36m|[m [33m|[m [33me79c8dc[m readme update
+* [1;36m|[m [33m|[m [33m15f904c[m readme update
+* [1;36m|[m [33m|[m [33m5b17d33[m cogvideo 5b diffuser and sat inference, and finetune update
+* [1;36m|[m [33m|[m   [33m9658405[m Merge branch 'cogVideo' of https://github.com/VideoVerses/VideoTuna into cogVideo
+[34m|[m[35m\[m [1;36m\[m [33m\[m  
+[34m|[m * [1;36m|[m [33m|[m [33m857d6cd[m 5b version
+* [35m|[m [1;36m|[m [33m|[m [33ma5176c2[m Merge branch 'cogVideo' of https://github.com/VideoVerses/VideoTuna into cogVideo
+[36m|[m[35m\[m[35m|[m [1;36m|[m [33m|[m 
+[36m|[m * [1;36m|[m [33m|[m [33mc100219[m readme_cogVideo format change
+[36m|[m * [1;36m|[m [33m|[m [33m73b64cc[m sat finetune
+[36m|[m [1;36m|[m[1;36m/[m [33m/[m  
+[36m|[m * [33m|[m   [33mf628334[m Merge branch 'main' of https://github.com/VideoVerses/VideoTuna
+[36m|[m [1;32m|[m[1;33m\[m [33m\[m  
+[36m|[m [1;32m|[m * [33m\[m   [33m25a831d[m Merge pull request #3 from VideoVerses/dev/eval
+[36m|[m [1;32m|[m [1;34m|[m[1;35m\[m [33m\[m  
+[36m|[m [1;32m|[m [1;34m|[m * [33m|[m [33m5a7331e[m add README and refine the code
+[36m|[m [1;32m|[m [1;34m|[m[1;34m/[m [33m/[m  
+[36m|[m * [1;34m/[m [33m/[m [33m2f5ea1f[m fix some bugs of opensora training
+[36m|[m [1;34m|[m[1;34m/[m [33m/[m  
+[36m|[m * [33m|[m   [33ma578be9[m merge opensora
+[36m|[m [1;36m|[m[31m\[m [33m\[m  
+[36m|[m [1;36m|[m * [33m|[m [33mbc40a2e[m merge the opensora v1.0 and v1.2
+[36m|[m [1;36m|[m * [33m|[m [33ma00944a[m Add flux fine-tuning
+[36m|[m [1;36m|[m * [33m|[m   [33mc7ae598[m Merge pull request #2 from VideoVerses/feature/opensora_v1.2
+[36m|[m [1;36m|[m [32m|[m[33m\[m [33m\[m  
+[36m|[m [1;36m|[m [32m|[m * [33m|[m [33m754d2a2[m add vbench evaluation code
+[36m|[m [1;36m|[m [32m|[m * [33m|[m [33m15726c6[m add support of opensora v1.2 inference
+[36m|[m [1;36m|[m [32m|[m * [33m|[m [33m3da35e3[m fix import bug of opensora_v1.0 inference
+[36m|[m [1;36m|[m [32m|[m[32m/[m [33m/[m  
+[36m|[m * [32m|[m [33m|[m [33m555ae27[m update opensora inf import
+[36m|[m * [32m|[m [33m|[m [33m12aa889[m update opensora inf import
+[36m|[m [32m|[m[32m/[m [33m/[m  
+[36m|[m * [33m|[m [33me009522[m Delete .idea directory
+[36m|[m * [33m|[m [33mef61ee9[m Update inference_cogVideo_diffusers.sh
+* [33m|[m [33m|[m [33m4b281b6[m Delete .idea directory
+[33m|[m[33m/[m [33m/[m  
+* [33m|[m [33m96e71d5[m filename change and shscript
+* [33m|[m   [33m09a5a75[m Merge branch 'main' into cogVideo
+[34m|[m[35m\[m [33m\[m  
+[34m|[m * [33m|[m [33mfeaeeb0[m fix: merge bug of 14f79e01b21e5ea5a724ee3a496ef74e53f7c269
+[34m|[m * [33m|[m [33m80f839f[m update readme
+[34m|[m [33m|[m[33m/[m  
+[34m|[m * [33m065c702[m update readme
+[34m|[m * [33m92f6abb[m update train vc, dc
+[34m|[m * [33me34bafc[m update codestructure
+[34m|[m * [33m9d3ba60[m update codestructure
+[34m|[m * [33mc95bd91[m Update inference_flux.sh
+[34m|[m * [33mf5d5741[m Update layers.py
+[34m|[m * [33m8928b45[m Rename math.py to flux_math.py
+[34m|[m * [33md443746[m update readme
+[34m|[m * [33m3951dff[m Add files via upload
+* [35m|[m [33mc60c36f[m cogVideo sat inference
+* [35m|[m [33ma863749[m readme_cogvideo update
+* [35m|[m [33m38a3e46[m Update README.md
+* [35m|[m [33m3121400[m README of cogVideo update
+[35m|[m[35m/[m  
+* [33m69aa57f[m Add flux inference for command line
+* [33mdf3bad4[m Add flux inference
+* [33m980f84c[m Update README.md
+* [33mb934d27[m update opensorav10
+* [33m0eddf8c[m Update README.md
+* [33m3dbf32c[m update
+* [33m1825468[m add: input for i2v
+* [33m84660a3[m refactor inference, inference vc & dc
+* [33m48627bd[m update Features
+* [33mb9bda08[m update Features
+* [33ma68c845[m update models
+* [33m7b36252[m update vc2
+* [33mc646070[m Initial commit
