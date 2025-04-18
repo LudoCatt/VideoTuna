@@ -9,6 +9,7 @@ from omegaconf import OmegaConf
 from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.cli import LightningCLI
 from transformers import logging as transf_logging
+import fcntl
 
 # sys.path.insert(1, os.path.join(sys.path[0], '..'))
 sys.path.insert(0, os.getcwd())
@@ -152,6 +153,7 @@ if __name__ == "__main__":
     if args.auto_resume:
         ## the saved checkpoint must be: full-info checkpoint
         resume_ckpt_path = get_autoresume_path(workdir)
+        print("Resuming from checkpoint in ", resume_ckpt_path)
         if resume_ckpt_path is not None:
             args.resume_from_checkpoint = resume_ckpt_path
             logger.info("Resuming from checkpoint: %s" % args.resume_from_checkpoint)
@@ -276,7 +278,21 @@ if __name__ == "__main__":
         except Exception as e:
             logger.error(f"Training failed: {str(e)}")
             raise
+    
+    ## Emergency saving or LoRA weights
+    full_state_dict = model.state_dict()
+    lora_state_dict = {
+        k: v for (k, v) in full_state_dict.items()
+        if "lora_" in k  # or any substring that definitely indicates LoRA
+    }
+    lora_path = os.path.join(ckptdir, "my_lora_weights.pt")
+    with open(lora_path, "wb") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        torch.save(lora_state_dict, f)
+        fcntl.flock(f, fcntl.LOCK_UN)
+        print("Saved emergency LoRA weights in ", lora_path)
 
+    '''
     if args.val:
         # Directly call validation
         trainer.validate(model, data)
@@ -284,3 +300,4 @@ if __name__ == "__main__":
     # Ensure test runs either after training finishes or if explicitly requested
     if args.test or not trainer.interrupted:
         trainer.test(model, data)
+    '''

@@ -8,13 +8,14 @@ model:
     first_stage_config:
       target: diffusers.AutoencoderKLCogVideoX
       params:
-        pretrained_model_name_or_path: checkpoints/cogvideo/CogVideoX-5b-I2V
+        pretrained_model_name_or_path: "/cluster/scratch/lcattaneo/CogVideoX-5b-I2V"
         subfolder: "vae"
 
     # Text encoder (T5) of CogVideoX
     cond_stage_config:
       target: videotuna.lvdm.modules.encoders.condition.FrozenT5Embedder
       params:
+        model_dir: "/cluster/scratch/lcattaneo/t5-v1_1-xxl"
         version: "DeepFloyd/t5-v1_1-xxl"
         device: "cuda"
         max_length: 226
@@ -24,7 +25,7 @@ model:
     denoiser_config:
       target: diffusers.CogVideoXTransformer3DModel
       params:
-        pretrained_model_name_or_path: checkpoints/cogvideo/CogVideoX-5b-I2V
+        pretrained_model_name_or_path: "/cluster/scratch/lcattaneo/CogVideoX-5b-I2V"
         subfolder: "transformer"
         # load_dtype: bf16 # bf16 for 5b / fp16 for 2B
 
@@ -41,7 +42,7 @@ model:
     scheduler_config:
       target: diffusers.CogVideoXDPMScheduler
       params:
-        pretrained_model_name_or_path: checkpoints/cogvideo/CogVideoX-5b-I2V
+        pretrained_model_name_or_path: "/cluster/scratch/lcattaneo/CogVideoX-5b-I2V"
         subfolder: scheduler
 
 # data configs
@@ -77,7 +78,7 @@ data:
     train:
       target: videotuna.data.datasets.DatasetFromCSV
       params:
-        csv_path: ${YOUR_DATA_CSV_PATH}
+        csv_path: "/cluster/home/lcattaneo/VideoTuna/videotuna/data/anno_files/videotuna_data.csv"
         height: 480
         width: 720
         video_length: 49
@@ -87,7 +88,7 @@ data:
     validation:
       target: videotuna.data.datasets.DatasetFromCSV
       params:
-        csv_path: ${YOUR_DATA_CSV_PATH}
+        csv_path: "/cluster/home/lcattaneo/VideoTuna/videotuna/data/anno_files/videotuna_data.csv"
         height: 480
         width: 720
         video_length: 49
@@ -101,7 +102,7 @@ lightning:
     benchmark: True
     num_nodes: 1
     accumulate_grad_batches: 2
-    max_epochs: 2000
+    max_epochs: 500
     precision: 32
   callbacks:
     image_logger:
@@ -117,5 +118,5 @@ lightning:
       params:
         filename: "{epoch:06}-{step:09}"
         save_weights_only: False
-        # every_n_epochs: 300
-        every_n_train_steps: 2 #200
+        # every_n_epochs: 50
+        every_n_train_steps: 625

@@ -256,16 +256,16 @@ class FrozenT5Embedder(AbstractEmbModel):
 
     def __init__(
         self,
-        model_dir="google/t5-v1_1-xxl",
+        model_dir="/cluster/scratch/lcattaneo/t5-v1_1-xxl",
         device="cuda",
         max_length=77,
         freeze=True,
         cache_dir=None,
     ):
         super().__init__()
-        if model_dir is not "google/t5-v1_1-xxl":
-            self.tokenizer = T5Tokenizer.from_pretrained(model_dir)
-            self.transformer = T5EncoderModel.from_pretrained(model_dir)
+        if model_dir != "google/t5-v1_1-xxl":
+            self.tokenizer = T5Tokenizer.from_pretrained("/cluster/scratch/lcattaneo/t5-v1_1-xxl")
+            self.transformer = T5EncoderModel.from_pretrained("/cluster/scratch/lcattaneo/t5-v1_1-xxl")
         else:
             self.tokenizer = T5Tokenizer.from_pretrained(model_dir, cache_dir=cache_dir)
             self.transformer = T5EncoderModel.from_pretrained(

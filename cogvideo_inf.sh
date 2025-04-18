@@ -2,7 +2,7 @@
 #SBATCH --job-name=cog_inf            # Job name
 #SBATCH --output=cog_inf.txt   # Output file
 #SBATCH --error=cog_inf.txt     # Error file
-#SBATCH --time=4:00:00                    # Max runtime (10 hours)
+#SBATCH --time=10:00:00                    # Max runtime (10 hours)
 #SBATCH --ntasks=1                         # Number of tasks
 #SBATCH --cpus-per-task=4                  # Number of CPU cores per task
 #SBATCH --gpus=1                           # Request 1 GPU
@@ -17,21 +17,4 @@ conda activate videotuna
 
 # Run the Python script
 cd ~/VideoTuna
-
-config=configs/004_cogvideox/cogvideo5b-i2v.yaml
-ckpt=/cluster/scratch/lcattaneo/results/train/20250416143617_cogvideox_i2v_5b/checkpoints/last.ckpt
-prompt_dir=inputs/i2v/576x1024
-
-current_time=$(date +%Y%m%d%H%M%S)
-savedir="results/inference/i2v/cogvideox-i2v-lora-1000-epochs-weird"
-
-python3 scripts/inference_cogvideo.py \
-    --config $config \
-    --ckpt_path $ckpt \
-    --prompt_dir $prompt_dir \
-    --savedir $savedir \
-    --bs 1 --height 480 --width 720 \
-    --fps 16 \
-    --seed 6666 \
-    --mode i2v \
-    --denoiser_precision bf16
+poetry run inference-cogvideo-i2v-lora

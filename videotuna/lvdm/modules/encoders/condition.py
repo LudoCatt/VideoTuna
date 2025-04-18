@@ -62,11 +62,19 @@ class FrozenT5Embedder(AbstractEncoder):
     """Uses the T5 transformer encoder for text"""
 
     def __init__(
-        self, version="google/t5-v1_1-large", device="cuda", max_length=77, freeze=True
-    ):  # others are google/t5-v1_1-xl and google/t5-v1_1-xxl
+        self, 
+        version="google/t5-v1_1-large", 
+        model_dir="/cluster/scratch/lcattaneo/t5-v1_1-xxl", 
+        device="cuda", 
+        max_length=77, 
+        freeze=True
+    ):  
+        # others are google/t5-v1_1-xl and google/t5-v1_1-xxl
         super().__init__()
-        self.tokenizer = T5Tokenizer.from_pretrained(version)
-        self.transformer = T5EncoderModel.from_pretrained(version)
+        # self.tokenizer = T5Tokenizer.from_pretrained(version)
+        # self.transformer = T5EncoderModel.from_pretrained(version)
+        self.tokenizer = T5Tokenizer.from_pretrained(model_dir)
+        self.transformer = T5EncoderModel.from_pretrained(model_dir)
         self.device = device
         self.max_length = max_length  # TODO: typical value?
         if freeze:

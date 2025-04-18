@@ -1,0 +1,272 @@
+[rank: 0] Seed set to 6666
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+Found 5 prompts and 5 images in inputs/i2v/576x1024
+Namespace(mode='i2v', ckpt_path='/cluster/scratch/lcattaneo/results/train/20250416143617_cogvideox_i2v_5b/checkpoints/last.ckpt', config='configs/004_cogvideox/cogvideo5b-i2v.yaml', prompt_file=None, prompt_dir='inputs/i2v/576x1024', savedir='results/inference/i2v/cogvideox-i2v-lora-1000-epochs-weird', standard_vbench=False, seed=6666, height=480, width=720, frames=49, fps=16, n_samples_prompt=1, bs=1, ddim_steps=50, ddim_eta=1.0, uncond_prompt='', unconditional_guidance_scale=6.0, unconditional_guidance_scale_temporal=None, multiple_cond_cfg=False, cfg_img=None, timestep_spacing='uniform', guidance_rescale=0.0, loop=False, gfi=False, lorackpt=None, savefps=10, denoiser_precision='bf16')
+uintx feature requires torch 2.3+, please upgrade pytorch
+Convert denoiser to bf16
+Injecting lora adapter
+LoraConfig(peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, base_model_name_or_path=None, revision=None, task_type=None, inference_mode=False, r=4, target_modules=['to_k', 'to_q', 'to_v', 'to_out.0'], lora_alpha=1.0, lora_dropout=0.0, fan_in_fan_out=False, bias='none', use_rslora=False, modules_to_save=None, init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', loftq_config={}, use_dora=False, layer_replication=None, runtime_config=LoraRuntimeConfig(ephemeral_gpu_offload=False))
+trainable params: 4,128,768 || all params: 5,574,608,448 || trainable%: 0.0741
+[INFO] model checkpoint loaded.
+Sample Iters:   0%|          | 0/5 [00:00<?, ?it/s]
+Denoising Steps: 0it [00:00, ?it/s][A
+Denoising Steps: 1it [00:04,  4.90s/it][A
+Denoising Steps: 2it [00:09,  4.90s/it][A
+Denoising Steps: 3it [00:14,  4.90s/it][A
+Denoising Steps: 4it [00:19,  4.91s/it][A
+Denoising Steps: 5it [00:24,  4.92s/it][A
+Denoising Steps: 6it [00:29,  4.93s/it][A
+Denoising Steps: 7it [00:34,  4.93s/it][A
+Denoising Steps: 8it [00:39,  4.94s/it][A
+Denoising Steps: 9it [00:44,  4.94s/it][A
+Denoising Steps: 10it [00:49,  4.95s/it][A
+Denoising Steps: 11it [00:54,  4.95s/it][A
+Denoising Steps: 12it [00:59,  4.95s/it][A
+Denoising Steps: 13it [01:04,  4.96s/it][A
+Denoising Steps: 14it [01:09,  4.96s/it][A
+Denoising Steps: 15it [01:14,  4.96s/it][A
+Denoising Steps: 16it [01:19,  4.97s/it][A
+Denoising Steps: 17it [01:24,  4.97s/it][A
+Denoising Steps: 18it [01:29,  4.97s/it][A
+Denoising Steps: 19it [01:34,  4.97s/it][A
+Denoising Steps: 20it [01:38,  4.97s/it][A
+Denoising Steps: 21it [01:43,  4.97s/it][A
+Denoising Steps: 22it [01:48,  4.97s/it][A
+Denoising Steps: 23it [01:53,  4.97s/it][A
+Denoising Steps: 24it [01:58,  4.97s/it][A
+Denoising Steps: 25it [02:03,  4.98s/it][A
+Denoising Steps: 26it [02:08,  4.98s/it][A
+Denoising Steps: 27it [02:13,  4.98s/it][A
+Denoising Steps: 28it [02:18,  4.98s/it][A
+Denoising Steps: 29it [02:23,  4.99s/it][A
+Denoising Steps: 30it [02:28,  4.99s/it][A
+Denoising Steps: 31it [02:33,  4.99s/it][A
+Denoising Steps: 32it [02:38,  4.99s/it][A
+Denoising Steps: 33it [02:43,  5.00s/it][A
+Denoising Steps: 34it [02:48,  5.00s/it][A
+Denoising Steps: 35it [02:53,  5.00s/it][A
+Denoising Steps: 36it [02:58,  5.01s/it][A
+Denoising Steps: 37it [03:03,  5.01s/it][A
+Denoising Steps: 38it [03:08,  5.01s/it][A
+Denoising Steps: 39it [03:13,  5.01s/it][A
+Denoising Steps: 40it [03:18,  5.01s/it][A
+Denoising Steps: 41it [03:23,  5.01s/it][A
+Denoising Steps: 42it [03:28,  5.01s/it][A
+Denoising Steps: 43it [03:33,  5.02s/it][A
+Denoising Steps: 44it [03:38,  5.02s/it][A
+Denoising Steps: 45it [03:43,  5.02s/it][A
+Denoising Steps: 46it [03:48,  5.01s/it][A
+Denoising Steps: 47it [03:54,  5.01s/it][A
+Denoising Steps: 48it [03:59,  5.01s/it][A
+Denoising Steps: 49it [04:04,  5.01s/it][A
+Denoising Steps: 50it [04:09,  5.01s/it][ADenoising Steps: 50it [04:09,  4.98s/it]
+Sample Iters:  20%|██        | 1/5 [04:16<17:07, 256.93s/it]
+Denoising Steps: 0it [00:00, ?it/s][A
+Denoising Steps: 1it [00:04,  5.00s/it][A
+Denoising Steps: 2it [00:09,  5.00s/it][A
+Denoising Steps: 3it [00:15,  5.00s/it][A
+Denoising Steps: 4it [00:20,  5.01s/it][A
+Denoising Steps: 5it [00:25,  5.01s/it][A
+Denoising Steps: 6it [00:30,  5.01s/it][A
+Denoising Steps: 7it [00:35,  5.01s/it][A
+Denoising Steps: 8it [00:40,  5.02s/it][A
+Denoising Steps: 9it [00:45,  5.02s/it][A
+Denoising Steps: 10it [00:50,  5.02s/it][A
+Denoising Steps: 11it [00:55,  5.02s/it][A
+Denoising Steps: 12it [01:00,  5.02s/it][A
+Denoising Steps: 13it [01:05,  5.02s/it][A
+Denoising Steps: 14it [01:10,  5.03s/it][A
+Denoising Steps: 15it [01:15,  5.03s/it][A
+Denoising Steps: 16it [01:20,  5.03s/it][A
+Denoising Steps: 17it [01:25,  5.04s/it][A
+Denoising Steps: 18it [01:30,  5.04s/it][A
+Denoising Steps: 19it [01:35,  5.04s/it][A
+Denoising Steps: 20it [01:40,  5.05s/it][A
+Denoising Steps: 21it [01:45,  5.05s/it][A
+Denoising Steps: 22it [01:50,  5.05s/it][A
+Denoising Steps: 23it [01:55,  5.05s/it][A
+Denoising Steps: 24it [02:00,  5.05s/it][A
+Denoising Steps: 25it [02:05,  5.05s/it][A
+Denoising Steps: 26it [02:10,  5.05s/it][A
+Denoising Steps: 27it [02:15,  5.05s/it][A
+Denoising Steps: 28it [02:20,  5.05s/it][A
+Denoising Steps: 29it [02:25,  5.06s/it][A
+Denoising Steps: 30it [02:31,  5.06s/it][A
+Denoising Steps: 31it [02:36,  5.06s/it][A
+Denoising Steps: 32it [02:41,  5.06s/it][A
+Denoising Steps: 33it [02:46,  5.06s/it][A
+Denoising Steps: 34it [02:51,  5.06s/it][A
+Denoising Steps: 35it [02:56,  5.06s/it][A
+Denoising Steps: 36it [03:01,  5.06s/it][A
+Denoising Steps: 37it [03:06,  5.06s/it][A
+Denoising Steps: 38it [03:11,  5.07s/it][A
+Denoising Steps: 39it [03:16,  5.06s/it][A
+Denoising Steps: 40it [03:21,  5.07s/it][A
+Denoising Steps: 41it [03:26,  5.07s/it][A
+Denoising Steps: 42it [03:31,  5.07s/it][A
+Denoising Steps: 43it [03:36,  5.07s/it][A
+Denoising Steps: 44it [03:42,  5.07s/it][A
+Denoising Steps: 45it [03:47,  5.07s/it][A
+Denoising Steps: 46it [03:52,  5.07s/it][A
+Denoising Steps: 47it [03:57,  5.07s/it][A
+Denoising Steps: 48it [04:02,  5.07s/it][A
+Denoising Steps: 49it [04:07,  5.08s/it][A
+Denoising Steps: 50it [04:12,  5.08s/it][ADenoising Steps: 50it [04:12,  5.05s/it]
+Sample Iters:  40%|████      | 2/5 [08:37<12:56, 258.87s/it]
+Denoising Steps: 0it [00:00, ?it/s][A
+Denoising Steps: 1it [00:05,  5.04s/it][A
+Denoising Steps: 2it [00:10,  5.04s/it][A
+Denoising Steps: 3it [00:15,  5.04s/it][A
+Denoising Steps: 4it [00:20,  5.05s/it][A
+Denoising Steps: 5it [00:25,  5.05s/it][A
+Denoising Steps: 6it [00:30,  5.05s/it][A
+Denoising Steps: 7it [00:35,  5.05s/it][A
+Denoising Steps: 8it [00:40,  5.05s/it][A
+Denoising Steps: 9it [00:45,  5.05s/it][A
+Denoising Steps: 10it [00:50,  5.05s/it][A
+Denoising Steps: 11it [00:55,  5.05s/it][A
+Denoising Steps: 12it [01:00,  5.05s/it][A
+Denoising Steps: 13it [01:05,  5.06s/it][A
+Denoising Steps: 14it [01:10,  5.06s/it][A
+Denoising Steps: 15it [01:15,  5.06s/it][A
+Denoising Steps: 16it [01:20,  5.06s/it][A
+Denoising Steps: 17it [01:25,  5.06s/it][A
+Denoising Steps: 18it [01:30,  5.06s/it][A
+Denoising Steps: 19it [01:36,  5.06s/it][A
+Denoising Steps: 20it [01:41,  5.06s/it][A
+Denoising Steps: 21it [01:46,  5.06s/it][A
+Denoising Steps: 22it [01:51,  5.07s/it][A
+Denoising Steps: 23it [01:56,  5.07s/it][A
+Denoising Steps: 24it [02:01,  5.07s/it][A
+Denoising Steps: 25it [02:06,  5.07s/it][A
+Denoising Steps: 26it [02:11,  5.07s/it][A
+Denoising Steps: 27it [02:16,  5.07s/it][A
+Denoising Steps: 28it [02:21,  5.07s/it][A
+Denoising Steps: 29it [02:26,  5.07s/it][A
+Denoising Steps: 30it [02:31,  5.08s/it][A
+Denoising Steps: 31it [02:36,  5.08s/it][A
+Denoising Steps: 32it [02:41,  5.07s/it][A
+Denoising Steps: 33it [02:47,  5.07s/it][A
+Denoising Steps: 34it [02:52,  5.07s/it][A
+Denoising Steps: 35it [02:57,  5.07s/it][A
+Denoising Steps: 36it [03:02,  5.07s/it][A
+Denoising Steps: 37it [03:07,  5.07s/it][A
+Denoising Steps: 38it [03:12,  5.07s/it][A
+Denoising Steps: 39it [03:17,  5.07s/it][A
+Denoising Steps: 40it [03:22,  5.07s/it][A
+Denoising Steps: 41it [03:27,  5.08s/it][A
+Denoising Steps: 42it [03:32,  5.08s/it][A
+Denoising Steps: 43it [03:37,  5.08s/it][A
+Denoising Steps: 44it [03:42,  5.08s/it][A
+Denoising Steps: 45it [03:47,  5.09s/it][A
+Denoising Steps: 46it [03:53,  5.09s/it][A
+Denoising Steps: 47it [03:58,  5.09s/it][A
+Denoising Steps: 48it [04:03,  5.09s/it][A
+Denoising Steps: 49it [04:08,  5.08s/it][A
+Denoising Steps: 50it [04:13,  5.08s/it][ADenoising Steps: 50it [04:13,  5.07s/it]
+Sample Iters:  60%|██████    | 3/5 [12:58<08:39, 259.80s/it]
+Denoising Steps: 0it [00:00, ?it/s][A
+Denoising Steps: 1it [00:05,  5.08s/it][A
+Denoising Steps: 2it [00:10,  5.08s/it][A
+Denoising Steps: 3it [00:15,  5.09s/it][A
+Denoising Steps: 4it [00:20,  5.09s/it][A
+Denoising Steps: 5it [00:25,  5.09s/it][A
+Denoising Steps: 6it [00:30,  5.09s/it][A
+Denoising Steps: 7it [00:35,  5.09s/it][A
+Denoising Steps: 8it [00:40,  5.09s/it][A
+Denoising Steps: 9it [00:45,  5.09s/it][A
+Denoising Steps: 10it [00:50,  5.09s/it][A
+Denoising Steps: 11it [00:55,  5.09s/it][A
+Denoising Steps: 12it [01:01,  5.09s/it][A
+Denoising Steps: 13it [01:06,  5.09s/it][A
+Denoising Steps: 14it [01:11,  5.09s/it][A
+Denoising Steps: 15it [01:16,  5.09s/it][A
+Denoising Steps: 16it [01:21,  5.09s/it][A
+Denoising Steps: 17it [01:26,  5.09s/it][A
+Denoising Steps: 18it [01:31,  5.09s/it][A
+Denoising Steps: 19it [01:36,  5.09s/it][A
+Denoising Steps: 20it [01:41,  5.09s/it][A
+Denoising Steps: 21it [01:46,  5.09s/it][A
+Denoising Steps: 22it [01:51,  5.09s/it][A
+Denoising Steps: 23it [01:57,  5.09s/it][A
+Denoising Steps: 24it [02:02,  5.10s/it][A
+Denoising Steps: 25it [02:07,  5.10s/it][A
+Denoising Steps: 26it [02:12,  5.10s/it][A
+Denoising Steps: 27it [02:17,  5.10s/it][A
+Denoising Steps: 28it [02:22,  5.10s/it][A
+Denoising Steps: 29it [02:27,  5.10s/it][A
+Denoising Steps: 30it [02:32,  5.10s/it][A
+Denoising Steps: 31it [02:37,  5.10s/it][A
+Denoising Steps: 32it [02:42,  5.09s/it][A
+Denoising Steps: 33it [02:48,  5.09s/it][A
+Denoising Steps: 34it [02:53,  5.09s/it][A
+Denoising Steps: 35it [02:58,  5.09s/it][A
+Denoising Steps: 36it [03:03,  5.10s/it][A
+Denoising Steps: 37it [03:08,  5.10s/it][A
+Denoising Steps: 38it [03:13,  5.10s/it][A
+Denoising Steps: 39it [03:18,  5.10s/it][A
+Denoising Steps: 40it [03:23,  5.10s/it][A
+Denoising Steps: 41it [03:28,  5.10s/it][A
+Denoising Steps: 42it [03:33,  5.10s/it][A
+Denoising Steps: 43it [03:39,  5.10s/it][A
+Denoising Steps: 44it [03:44,  5.10s/it][A
+Denoising Steps: 45it [03:49,  5.09s/it][A
+Denoising Steps: 46it [03:54,  5.09s/it][A
+Denoising Steps: 47it [03:59,  5.09s/it][A
+Denoising Steps: 48it [04:04,  5.09s/it][A
+Denoising Steps: 49it [04:09,  5.10s/it][A
+Denoising Steps: 50it [04:14,  5.10s/it][ADenoising Steps: 50it [04:14,  5.09s/it]
+Sample Iters:  80%|████████  | 4/5 [17:20<04:20, 260.84s/it]
+Denoising Steps: 0it [00:00, ?it/s][A
+Denoising Steps: 1it [00:05,  5.07s/it][A
+Denoising Steps: 2it [00:10,  5.07s/it][A
+Denoising Steps: 3it [00:15,  5.07s/it][A
+Denoising Steps: 4it [00:20,  5.08s/it][A
+Denoising Steps: 5it [00:25,  5.08s/it][A
+Denoising Steps: 6it [00:30,  5.08s/it][A
+Denoising Steps: 7it [00:35,  5.09s/it][A
+Denoising Steps: 8it [00:40,  5.09s/it][A
+Denoising Steps: 9it [00:45,  5.09s/it][A
+Denoising Steps: 10it [00:50,  5.09s/it][A
+Denoising Steps: 11it [00:55,  5.09s/it][A
+Denoising Steps: 12it [01:01,  5.10s/it][A
+Denoising Steps: 13it [01:06,  5.10s/it][A
+Denoising Steps: 14it [01:11,  5.10s/it][A
+Denoising Steps: 15it [01:16,  5.10s/it][A
+Denoising Steps: 16it [01:21,  5.10s/it][A
+Denoising Steps: 17it [01:26,  5.10s/it][A
+Denoising Steps: 18it [01:31,  5.10s/it][A
+Denoising Steps: 19it [01:36,  5.09s/it][A
+Denoising Steps: 20it [01:41,  5.09s/it][A
+Denoising Steps: 21it [01:46,  5.09s/it][A
+Denoising Steps: 22it [01:51,  5.09s/it][A
+Denoising Steps: 23it [01:57,  5.09s/it][A
+Denoising Steps: 24it [02:02,  5.09s/it][A
+Denoising Steps: 25it [02:07,  5.09s/it][A
+Denoising Steps: 26it [02:12,  5.10s/it][A
+Denoising Steps: 27it [02:17,  5.10s/it][A
+Denoising Steps: 28it [02:22,  5.10s/it][A
+Denoising Steps: 29it [02:27,  5.10s/it][A
+Denoising Steps: 30it [02:32,  5.10s/it][A
+Denoising Steps: 31it [02:37,  5.10s/it][A
+Denoising Steps: 32it [02:42,  5.10s/it][A
+Denoising Steps: 33it [02:48,  5.09s/it][A
+Denoising Steps: 34it [02:53,  5.09s/it][A
+Denoising Steps: 35it [02:58,  5.09s/it][A
+Denoising Steps: 36it [03:03,  5.09s/it][A
+Denoising Steps: 37it [03:08,  5.09s/it][A
+Denoising Steps: 38it [03:13,  5.10s/it][A
+Denoising Steps: 39it [03:18,  5.10s/it][A
+Denoising Steps: 40it [03:23,  5.10s/it][A
+Denoising Steps: 41it [03:28,  5.10s/it][A
+Denoising Steps: 42it [03:33,  5.10s/it][A
+Denoising Steps: 43it [03:39,  5.10s/it][A
+Denoising Steps: 44it [03:44,  5.10s/it][A
+Denoising Steps: 45it [03:49,  5.10s/it][A
+Denoising Steps: 46it [03:54,  5.10s/it][A
+Denoising Steps: 47it [03:59,  5.09s/it][A
+Denoising Steps: 48it [04:04,  5.09s/it][A
+Denoising Steps: 49it [04:09,  5.09s/it][A
+Denoising Steps: 50it [04:14,  5.09s/it][ADenoising Steps: 50it [04:14,  5.09s/it]
+Sample Iters: 100%|██████████| 5/5 [21:42<00:00, 261.41s/it]Sample Iters: 100%|██████████| 5/5 [21:42<00:00, 260.58s/it]
+Saved in results/inference/i2v/cogvideox-i2v-lora-1000-epochs-weird. Time used: 1302.92 seconds

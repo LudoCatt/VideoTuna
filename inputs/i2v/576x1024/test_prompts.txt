@@ -1,8 +1,5 @@
-a man in an astronaut suit playing a guitar
-riding a bike under a bridge
-time-lapse of a blooming flower with leaves and a stem
-fireworks display
-a beautiful woman with long hair and a dress blowing in the wind
-pouring beer into a glass of ice and beer
-a robot is walking through a destroyed city
-a group of penguins walking on a beach
+bulky humanoid robot stops walking after one second on a reflective checkerboard in side view
+humanoid robot turns right 90 degrees on a reflective checkerboard floor
+slim humanoid robot lifts arm and waves on white background
+quadruped robot walks towards the camera on reflective checkerboard floor
+humanoid robot walks forward across lifting both arms reflective checkerboard floor 

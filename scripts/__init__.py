@@ -112,9 +112,9 @@ def inference_cogvideo_i2v_diffusers():
             "--model_input",
             "inputs/i2v/576x1024",
             "--model_path",
-            "checkpoints/cogvideo/CogVideoX-5b-I2V",
+            "/cluster/scratch/lcattaneo/CogVideoX-5b-I2V",
             "--output_path",
-            "results/cogvideo-test-i2v",
+            "results/cogvideo-test-i2v-weird",
             "--num_inference_steps",
             "50",
             "--guidance_scale",
@@ -132,8 +132,8 @@ def inference_cogvideo_i2v_diffusers():
 
 def inference_cogvideo_i2v_lora():
     config = "configs/004_cogvideox/cogvideo5b-i2v.yaml"
-    ckpt = "results/train/cogvideox_i2v_5b/{YOUR_CKPT_PATH}.ckpt"
-    prompt_dir = "{YOUR_PROMPT_DIR}"
+    ckpt = "/cluster/scratch/lcattaneo/20250415021758_cogvideox_i2v_5b/checkpoints/last.ckpt"
+    prompt_dir = "inputs/i2v/576x1024"
 
     savedir = f"results/inference/i2v/cogvideox-i2v-lora-{current_time}"
 
@@ -692,7 +692,7 @@ def train_cogvideox_i2v_lora():
     config = "configs/004_cogvideox/cogvideo5b-i2v.yaml"  # Experiment config
 
     # Experiment settings
-    resroot = "results/train"  # Experiment saving directory
+    resroot = "/cluster/scratch/lcattaneo/results/train"  # Experiment saving directory
     expname = "cogvideox_i2v_5b"  # Experiment name
 
     result = subprocess.run(
