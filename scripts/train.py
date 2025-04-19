@@ -10,6 +10,7 @@ from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.cli import LightningCLI
 from transformers import logging as transf_logging
 import fcntl
+import wandb
 
 # sys.path.insert(1, os.path.join(sys.path[0], '..'))
 sys.path.insert(0, os.getcwd())
@@ -272,7 +273,13 @@ if __name__ == "__main__":
             with torch.no_grad():
                 p.data = p.data.contiguous()
 
-    ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    ## wandb setup >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    
+    print("***** Setting up wandb *****")
+    wandb.init(name = "cogvideox_i2v_1", project = "Expert_Demos_Cogvideo")
+    # wandb.init(project="Expert_Demos_Cogvideo", id="u37epfqv", resume="must")
+
+    ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if args.train:
         try:
@@ -287,13 +294,17 @@ if __name__ == "__main__":
         except Exception as e:
             logger.error(f"Training failed: {str(e)}")
             raise
+
+    wandb.finish()
     
+    '''
     ## Emergency saving or LoRA weights
     full_state_dict = model.state_dict()
     lora_state_dict = {
         k: v for (k, v) in full_state_dict.items()
         if "lora_" in k  # or any substring that definitely indicates LoRA
     }
+
     lora_path = os.path.join(ckptdir, "my_lora_weights.pt")
     with open(lora_path, "wb") as f:
         fcntl.flock(f, fcntl.LOCK_EX)
@@ -301,7 +312,6 @@ if __name__ == "__main__":
         fcntl.flock(f, fcntl.LOCK_UN)
         print("Saved emergency LoRA weights in ", lora_path)
 
-    '''
     if args.val:
         # Directly call validation
         trainer.validate(model, data)

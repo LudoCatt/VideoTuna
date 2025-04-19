@@ -16,6 +16,8 @@ from diffusers.utils.torch_utils import randn_tensor
 from videotuna.cogvideo_hf.cogvideo_pl import CogVideoXWorkFlow, retrieve_timesteps
 from videotuna.utils.common_utils import precision_to_dtype
 
+import wandb
+
 def retrieve_latents(
     encoder_output: torch.Tensor,
     generator: Optional[torch.Generator] = None,
@@ -177,6 +179,14 @@ class CogVideoXI2V(CogVideoXWorkFlow):
             (weights * (model_pred - target) ** 2).reshape(batch_size, -1), dim=1
         )
         loss = loss.mean()
+
+        # Wandb logging
+        log_dict = {
+            "loss": loss,
+            "log_loss": loss.log()
+        }
+        wandb.log(log_dict)
+
         return loss
 
     def prepare_latents(

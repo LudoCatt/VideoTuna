@@ -1,0 +1,4 @@
+[rank: 0] Seed set to 20230211
+@lightning version: 2.4.0 [>=2.0 required]
+***** Configuring Model *****
+slurmstepd: error: *** JOB 29763764 ON eu-ts-02 CANCELLED AT 2025-04-18T22:13:43 ***

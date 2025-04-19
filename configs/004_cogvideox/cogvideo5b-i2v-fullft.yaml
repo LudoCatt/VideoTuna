@@ -69,7 +69,7 @@ lightning:
     benchmark: True
     num_nodes: 1
     accumulate_grad_batches: 2
-    max_epochs: 100
+    max_epochs: 2
     precision: 16
   callbacks:
     image_logger:
