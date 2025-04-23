@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH --job-name=cog_lora            # Job name
-#SBATCH --output=cog_lora.txt   # Output file
-#SBATCH --error=cog_lora.txt     # Error file
-#SBATCH --time=24:00:00                    # Max runtime (10 hours)
-#SBATCH --ntasks=1                         # Number of tasks
-#SBATCH --cpus-per-task=4                  # Number of CPU cores per task
-#SBATCH --gpus=1                           # Request 1 GPU
-#SBATCH --gres=gpumem:79g                  # Request 79 GB GPU memory
-#SBATCH --partition=gpu                    # Use the GPU partition
-#SBATCH --mem-per-cpu=79G                  # Memory per CPU core
+#SBATCH --job-name=cog_lora               # Job name
+#SBATCH --output=cog_lora.txt             # Output file
+#SBATCH --error=cog_lora.txt              # Error file
+#SBATCH --time=24:00:00                   # Max runtime (10 hours)
+#SBATCH --ntasks=1                        # Number of tasks
+#SBATCH --cpus-per-task=8                 # (rule of thumb ≈ 4 CPU cores / GPU)
+#SBATCH --gpus=2                          # Request 2 GPUs
+#SBATCH --gres=gpumem:79g                 # Each GPU must have ≥ 79 GB HBM
+#SBATCH --partition=gpu                   # Use the GPU partition
+#SBATCH --mem-per-cpu=79G                 # System RAM per CPU core
 
 # Load the Conda environment
 export PATH=~/miniconda3/bin:$PATH
@@ -31,6 +31,6 @@ python scripts/train.py \
 --base $CONFIG \
 --logdir $RESROOT \
 --name "$CURRENT_TIME"_$EXPNAME \
---devices '0,' \
+--devices '0,1' \
 lightning.trainer.num_nodes=1 \
 # --auto_resume
