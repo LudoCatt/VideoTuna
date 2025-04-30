@@ -185,7 +185,9 @@ class CogVideoXI2V(CogVideoXWorkFlow):
             "loss": loss,
             "log_loss": loss.log()
         }
-        wandb.log(log_dict)
+        
+        if self.trainer.is_global_zero:          
+            wandb.log(log_dict, step=self.global_step)
 
         return loss
 

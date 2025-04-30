@@ -275,8 +275,12 @@ if __name__ == "__main__":
 
     ## wandb setup >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
-    print("***** Setting up wandb *****")
-    wandb.init(name = "cogvideox_i2v_1", project = "Expert_Demos_Cogvideo")
+    wandb.init(
+        project="Expert_Demos_Cogvideo",
+        name="cogvideox_i2v_1" if trainer.global_rank == 0 else None,
+        mode="online" if trainer.global_rank == 0 else "disabled",
+        reinit=True,            # safe if you re-launch in the same process
+    )
     # wandb.init(project="Expert_Demos_Cogvideo", id="u37epfqv", resume="must")
 
     ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
