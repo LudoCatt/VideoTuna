@@ -64,26 +64,44 @@ data:
 
 # training configs
 lightning:
+  # use the standard shorthand again
   strategy: deepspeed_stage_2
+
+  # all the options you need go here
+  deepspeed_config:
+    zero_optimization:
+      stage: 2
+      contiguous_gradients: true
+      overlap_comm: true
+      reduce_bucket_size: 500000000
+    state_dict_type: "sharded"
+    save_full_weights: false
+    fp16:
+      enabled: true
+      loss_scale_window: 500
+
   trainer:
     benchmark: True
     num_nodes: 1
     accumulate_grad_batches: 2
     max_epochs: 200
     precision: 16
+    gradient_clip_val: 1.0
+
   callbacks:
     image_logger:
       target: videotuna.utils.callbacks.ImageLogger
       params:
-        batch_frequency: 100
+        batch_frequency: 500
         max_images: 2
-        to_local: True # save videos into local files
+        to_local: True
         log_images_kwargs:
           unconditional_guidance_scale: 6
+
     metrics_over_trainsteps_checkpoint:
       target: pytorch_lightning.callbacks.ModelCheckpoint
       params:
         filename: "{epoch:06}-{step:09}"
-        save_weights_only: False
-        # every_n_epochs: 300
+        save_weights_only: True
+        save_on_train_epoch_end: False
         every_n_train_steps: 500

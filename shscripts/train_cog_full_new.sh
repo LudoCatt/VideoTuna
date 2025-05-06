@@ -1,15 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=cog_fullft_5b          # any name is fine
-#SBATCH --partition=gpu                  # Leonhard "gpu" partition
+#SBATCH --job-name=cog_fullft_5b 
+#SBATCH --partition=gpu   
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
-
-# one task (the script) gets both GPUs
 #SBATCH --ntasks=1
 #SBATCH --gpus=2
-#SBATCH --gres=gpumem:80g                # 80-GB A100 flavour
-
-#SBATCH --cpus-per-task=16               # adjust to taste
+#SBATCH --gres=gpumem:80g 
+#SBATCH --cpus-per-task=16
 #SBATCH --mem-per-cpu=13G
 #SBATCH --output=logs/%x_%j_out.txt
 #SBATCH --error=logs/%x_%j_err.txt
@@ -32,5 +29,5 @@ python scripts/train.py -t \
         --base   "$CONFIG" \
         --logdir "$RESROOT" \
         --name   "$RUNNAME" \
-        --devices 0,1 \                     # Lightning sees both GPUs
+        --devices 0,1 \
         lightning.trainer.num_nodes=1

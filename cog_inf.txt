@@ -1,272 +1,269 @@
 [rank: 0] Seed set to 6666
 You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
 Found 5 prompts and 5 images in inputs/i2v/576x1024
-Namespace(mode='i2v', ckpt_path='/cluster/scratch/lcattaneo/results/train/20250416143617_cogvideox_i2v_5b/checkpoints/last.ckpt', config='configs/004_cogvideox/cogvideo5b-i2v.yaml', prompt_file=None, prompt_dir='inputs/i2v/576x1024', savedir='results/inference/i2v/cogvideox-i2v-lora-1000-epochs-weird', standard_vbench=False, seed=6666, height=480, width=720, frames=49, fps=16, n_samples_prompt=1, bs=1, ddim_steps=50, ddim_eta=1.0, uncond_prompt='', unconditional_guidance_scale=6.0, unconditional_guidance_scale_temporal=None, multiple_cond_cfg=False, cfg_img=None, timestep_spacing='uniform', guidance_rescale=0.0, loop=False, gfi=False, lorackpt=None, savefps=10, denoiser_precision='bf16')
+Namespace(mode='i2v', ckpt_path='/cluster/scratch/lcattaneo/results/train/20250430195636_cogvideox_i2v_5b_fullft/checkpoints/last.ckpt/checkpoint/mp_rank_00_model_states.pt', config='configs/004_cogvideox/cogvideo5b-i2v-fullft.yaml', prompt_file=None, prompt_dir='inputs/i2v/576x1024', savedir='results/inference/i2v/cogvideox-i2v-fullft-20250501170202', standard_vbench=False, seed=6666, height=480, width=720, frames=49, fps=16, n_samples_prompt=1, bs=1, ddim_steps=50, ddim_eta=1.0, uncond_prompt='', unconditional_guidance_scale=6.0, unconditional_guidance_scale_temporal=None, multiple_cond_cfg=False, cfg_img=None, timestep_spacing='uniform', guidance_rescale=0.0, loop=False, gfi=False, lorackpt=None, savefps=10, denoiser_precision='bf16')
 uintx feature requires torch 2.3+, please upgrade pytorch
 Convert denoiser to bf16
-Injecting lora adapter
-LoraConfig(peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, base_model_name_or_path=None, revision=None, task_type=None, inference_mode=False, r=4, target_modules=['to_k', 'to_q', 'to_v', 'to_out.0'], lora_alpha=1.0, lora_dropout=0.0, fan_in_fan_out=False, bias='none', use_rslora=False, modules_to_save=None, init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', loftq_config={}, use_dora=False, layer_replication=None, runtime_config=LoraRuntimeConfig(ephemeral_gpu_offload=False))
-trainable params: 4,128,768 || all params: 5,574,608,448 || trainable%: 0.0741
 [INFO] model checkpoint loaded.
 Sample Iters:   0%|          | 0/5 [00:00<?, ?it/s]
-Denoising Steps: 0it [00:00, ?it/s][A
-Denoising Steps: 1it [00:04,  4.90s/it][A
-Denoising Steps: 2it [00:09,  4.90s/it][A
-Denoising Steps: 3it [00:14,  4.90s/it][A
-Denoising Steps: 4it [00:19,  4.91s/it][A
-Denoising Steps: 5it [00:24,  4.92s/it][A
-Denoising Steps: 6it [00:29,  4.93s/it][A
-Denoising Steps: 7it [00:34,  4.93s/it][A
-Denoising Steps: 8it [00:39,  4.94s/it][A
-Denoising Steps: 9it [00:44,  4.94s/it][A
-Denoising Steps: 10it [00:49,  4.95s/it][A
-Denoising Steps: 11it [00:54,  4.95s/it][A
-Denoising Steps: 12it [00:59,  4.95s/it][A
-Denoising Steps: 13it [01:04,  4.96s/it][A
-Denoising Steps: 14it [01:09,  4.96s/it][A
-Denoising Steps: 15it [01:14,  4.96s/it][A
-Denoising Steps: 16it [01:19,  4.97s/it][A
-Denoising Steps: 17it [01:24,  4.97s/it][A
-Denoising Steps: 18it [01:29,  4.97s/it][A
-Denoising Steps: 19it [01:34,  4.97s/it][A
-Denoising Steps: 20it [01:38,  4.97s/it][A
-Denoising Steps: 21it [01:43,  4.97s/it][A
-Denoising Steps: 22it [01:48,  4.97s/it][A
-Denoising Steps: 23it [01:53,  4.97s/it][A
-Denoising Steps: 24it [01:58,  4.97s/it][A
-Denoising Steps: 25it [02:03,  4.98s/it][A
-Denoising Steps: 26it [02:08,  4.98s/it][A
-Denoising Steps: 27it [02:13,  4.98s/it][A
-Denoising Steps: 28it [02:18,  4.98s/it][A
-Denoising Steps: 29it [02:23,  4.99s/it][A
-Denoising Steps: 30it [02:28,  4.99s/it][A
-Denoising Steps: 31it [02:33,  4.99s/it][A
-Denoising Steps: 32it [02:38,  4.99s/it][A
-Denoising Steps: 33it [02:43,  5.00s/it][A
-Denoising Steps: 34it [02:48,  5.00s/it][A
-Denoising Steps: 35it [02:53,  5.00s/it][A
-Denoising Steps: 36it [02:58,  5.01s/it][A
-Denoising Steps: 37it [03:03,  5.01s/it][A
-Denoising Steps: 38it [03:08,  5.01s/it][A
-Denoising Steps: 39it [03:13,  5.01s/it][A
-Denoising Steps: 40it [03:18,  5.01s/it][A
-Denoising Steps: 41it [03:23,  5.01s/it][A
-Denoising Steps: 42it [03:28,  5.01s/it][A
-Denoising Steps: 43it [03:33,  5.02s/it][A
-Denoising Steps: 44it [03:38,  5.02s/it][A
-Denoising Steps: 45it [03:43,  5.02s/it][A
-Denoising Steps: 46it [03:48,  5.01s/it][A
-Denoising Steps: 47it [03:54,  5.01s/it][A
-Denoising Steps: 48it [03:59,  5.01s/it][A
-Denoising Steps: 49it [04:04,  5.01s/it][A
-Denoising Steps: 50it [04:09,  5.01s/it][ADenoising Steps: 50it [04:09,  4.98s/it]
-Sample Iters:  20%|██        | 1/5 [04:16<17:07, 256.93s/it]
-Denoising Steps: 0it [00:00, ?it/s][A
-Denoising Steps: 1it [00:04,  5.00s/it][A
-Denoising Steps: 2it [00:09,  5.00s/it][A
-Denoising Steps: 3it [00:15,  5.00s/it][A
-Denoising Steps: 4it [00:20,  5.01s/it][A
-Denoising Steps: 5it [00:25,  5.01s/it][A
-Denoising Steps: 6it [00:30,  5.01s/it][A
-Denoising Steps: 7it [00:35,  5.01s/it][A
-Denoising Steps: 8it [00:40,  5.02s/it][A
-Denoising Steps: 9it [00:45,  5.02s/it][A
-Denoising Steps: 10it [00:50,  5.02s/it][A
-Denoising Steps: 11it [00:55,  5.02s/it][A
-Denoising Steps: 12it [01:00,  5.02s/it][A
-Denoising Steps: 13it [01:05,  5.02s/it][A
-Denoising Steps: 14it [01:10,  5.03s/it][A
-Denoising Steps: 15it [01:15,  5.03s/it][A
-Denoising Steps: 16it [01:20,  5.03s/it][A
-Denoising Steps: 17it [01:25,  5.04s/it][A
-Denoising Steps: 18it [01:30,  5.04s/it][A
-Denoising Steps: 19it [01:35,  5.04s/it][A
-Denoising Steps: 20it [01:40,  5.05s/it][A
-Denoising Steps: 21it [01:45,  5.05s/it][A
-Denoising Steps: 22it [01:50,  5.05s/it][A
-Denoising Steps: 23it [01:55,  5.05s/it][A
-Denoising Steps: 24it [02:00,  5.05s/it][A
-Denoising Steps: 25it [02:05,  5.05s/it][A
-Denoising Steps: 26it [02:10,  5.05s/it][A
-Denoising Steps: 27it [02:15,  5.05s/it][A
-Denoising Steps: 28it [02:20,  5.05s/it][A
-Denoising Steps: 29it [02:25,  5.06s/it][A
-Denoising Steps: 30it [02:31,  5.06s/it][A
-Denoising Steps: 31it [02:36,  5.06s/it][A
-Denoising Steps: 32it [02:41,  5.06s/it][A
-Denoising Steps: 33it [02:46,  5.06s/it][A
-Denoising Steps: 34it [02:51,  5.06s/it][A
-Denoising Steps: 35it [02:56,  5.06s/it][A
-Denoising Steps: 36it [03:01,  5.06s/it][A
-Denoising Steps: 37it [03:06,  5.06s/it][A
-Denoising Steps: 38it [03:11,  5.07s/it][A
-Denoising Steps: 39it [03:16,  5.06s/it][A
-Denoising Steps: 40it [03:21,  5.07s/it][A
-Denoising Steps: 41it [03:26,  5.07s/it][A
-Denoising Steps: 42it [03:31,  5.07s/it][A
-Denoising Steps: 43it [03:36,  5.07s/it][A
-Denoising Steps: 44it [03:42,  5.07s/it][A
-Denoising Steps: 45it [03:47,  5.07s/it][A
-Denoising Steps: 46it [03:52,  5.07s/it][A
-Denoising Steps: 47it [03:57,  5.07s/it][A
-Denoising Steps: 48it [04:02,  5.07s/it][A
-Denoising Steps: 49it [04:07,  5.08s/it][A
-Denoising Steps: 50it [04:12,  5.08s/it][ADenoising Steps: 50it [04:12,  5.05s/it]
-Sample Iters:  40%|████      | 2/5 [08:37<12:56, 258.87s/it]
-Denoising Steps: 0it [00:00, ?it/s][A
-Denoising Steps: 1it [00:05,  5.04s/it][A
-Denoising Steps: 2it [00:10,  5.04s/it][A
-Denoising Steps: 3it [00:15,  5.04s/it][A
-Denoising Steps: 4it [00:20,  5.05s/it][A
-Denoising Steps: 5it [00:25,  5.05s/it][A
-Denoising Steps: 6it [00:30,  5.05s/it][A
-Denoising Steps: 7it [00:35,  5.05s/it][A
-Denoising Steps: 8it [00:40,  5.05s/it][A
-Denoising Steps: 9it [00:45,  5.05s/it][A
-Denoising Steps: 10it [00:50,  5.05s/it][A
-Denoising Steps: 11it [00:55,  5.05s/it][A
-Denoising Steps: 12it [01:00,  5.05s/it][A
-Denoising Steps: 13it [01:05,  5.06s/it][A
-Denoising Steps: 14it [01:10,  5.06s/it][A
-Denoising Steps: 15it [01:15,  5.06s/it][A
-Denoising Steps: 16it [01:20,  5.06s/it][A
-Denoising Steps: 17it [01:25,  5.06s/it][A
-Denoising Steps: 18it [01:30,  5.06s/it][A
-Denoising Steps: 19it [01:36,  5.06s/it][A
-Denoising Steps: 20it [01:41,  5.06s/it][A
-Denoising Steps: 21it [01:46,  5.06s/it][A
-Denoising Steps: 22it [01:51,  5.07s/it][A
-Denoising Steps: 23it [01:56,  5.07s/it][A
-Denoising Steps: 24it [02:01,  5.07s/it][A
-Denoising Steps: 25it [02:06,  5.07s/it][A
-Denoising Steps: 26it [02:11,  5.07s/it][A
-Denoising Steps: 27it [02:16,  5.07s/it][A
-Denoising Steps: 28it [02:21,  5.07s/it][A
-Denoising Steps: 29it [02:26,  5.07s/it][A
-Denoising Steps: 30it [02:31,  5.08s/it][A
-Denoising Steps: 31it [02:36,  5.08s/it][A
-Denoising Steps: 32it [02:41,  5.07s/it][A
-Denoising Steps: 33it [02:47,  5.07s/it][A
-Denoising Steps: 34it [02:52,  5.07s/it][A
-Denoising Steps: 35it [02:57,  5.07s/it][A
-Denoising Steps: 36it [03:02,  5.07s/it][A
-Denoising Steps: 37it [03:07,  5.07s/it][A
-Denoising Steps: 38it [03:12,  5.07s/it][A
-Denoising Steps: 39it [03:17,  5.07s/it][A
-Denoising Steps: 40it [03:22,  5.07s/it][A
-Denoising Steps: 41it [03:27,  5.08s/it][A
-Denoising Steps: 42it [03:32,  5.08s/it][A
-Denoising Steps: 43it [03:37,  5.08s/it][A
-Denoising Steps: 44it [03:42,  5.08s/it][A
-Denoising Steps: 45it [03:47,  5.09s/it][A
-Denoising Steps: 46it [03:53,  5.09s/it][A
-Denoising Steps: 47it [03:58,  5.09s/it][A
-Denoising Steps: 48it [04:03,  5.09s/it][A
-Denoising Steps: 49it [04:08,  5.08s/it][A
-Denoising Steps: 50it [04:13,  5.08s/it][ADenoising Steps: 50it [04:13,  5.07s/it]
-Sample Iters:  60%|██████    | 3/5 [12:58<08:39, 259.80s/it]
-Denoising Steps: 0it [00:00, ?it/s][A
-Denoising Steps: 1it [00:05,  5.08s/it][A
-Denoising Steps: 2it [00:10,  5.08s/it][A
-Denoising Steps: 3it [00:15,  5.09s/it][A
-Denoising Steps: 4it [00:20,  5.09s/it][A
-Denoising Steps: 5it [00:25,  5.09s/it][A
-Denoising Steps: 6it [00:30,  5.09s/it][A
-Denoising Steps: 7it [00:35,  5.09s/it][A
-Denoising Steps: 8it [00:40,  5.09s/it][A
-Denoising Steps: 9it [00:45,  5.09s/it][A
-Denoising Steps: 10it [00:50,  5.09s/it][A
-Denoising Steps: 11it [00:55,  5.09s/it][A
-Denoising Steps: 12it [01:01,  5.09s/it][A
-Denoising Steps: 13it [01:06,  5.09s/it][A
-Denoising Steps: 14it [01:11,  5.09s/it][A
-Denoising Steps: 15it [01:16,  5.09s/it][A
-Denoising Steps: 16it [01:21,  5.09s/it][A
-Denoising Steps: 17it [01:26,  5.09s/it][A
-Denoising Steps: 18it [01:31,  5.09s/it][A
-Denoising Steps: 19it [01:36,  5.09s/it][A
-Denoising Steps: 20it [01:41,  5.09s/it][A
-Denoising Steps: 21it [01:46,  5.09s/it][A
-Denoising Steps: 22it [01:51,  5.09s/it][A
-Denoising Steps: 23it [01:57,  5.09s/it][A
-Denoising Steps: 24it [02:02,  5.10s/it][A
-Denoising Steps: 25it [02:07,  5.10s/it][A
-Denoising Steps: 26it [02:12,  5.10s/it][A
-Denoising Steps: 27it [02:17,  5.10s/it][A
-Denoising Steps: 28it [02:22,  5.10s/it][A
-Denoising Steps: 29it [02:27,  5.10s/it][A
-Denoising Steps: 30it [02:32,  5.10s/it][A
-Denoising Steps: 31it [02:37,  5.10s/it][A
-Denoising Steps: 32it [02:42,  5.09s/it][A
-Denoising Steps: 33it [02:48,  5.09s/it][A
-Denoising Steps: 34it [02:53,  5.09s/it][A
-Denoising Steps: 35it [02:58,  5.09s/it][A
-Denoising Steps: 36it [03:03,  5.10s/it][A
-Denoising Steps: 37it [03:08,  5.10s/it][A
-Denoising Steps: 38it [03:13,  5.10s/it][A
-Denoising Steps: 39it [03:18,  5.10s/it][A
-Denoising Steps: 40it [03:23,  5.10s/it][A
-Denoising Steps: 41it [03:28,  5.10s/it][A
-Denoising Steps: 42it [03:33,  5.10s/it][A
-Denoising Steps: 43it [03:39,  5.10s/it][A
-Denoising Steps: 44it [03:44,  5.10s/it][A
-Denoising Steps: 45it [03:49,  5.09s/it][A
-Denoising Steps: 46it [03:54,  5.09s/it][A
-Denoising Steps: 47it [03:59,  5.09s/it][A
-Denoising Steps: 48it [04:04,  5.09s/it][A
-Denoising Steps: 49it [04:09,  5.10s/it][A
-Denoising Steps: 50it [04:14,  5.10s/it][ADenoising Steps: 50it [04:14,  5.09s/it]
-Sample Iters:  80%|████████  | 4/5 [17:20<04:20, 260.84s/it]
-Denoising Steps: 0it [00:00, ?it/s][A
-Denoising Steps: 1it [00:05,  5.07s/it][A
-Denoising Steps: 2it [00:10,  5.07s/it][A
-Denoising Steps: 3it [00:15,  5.07s/it][A
-Denoising Steps: 4it [00:20,  5.08s/it][A
-Denoising Steps: 5it [00:25,  5.08s/it][A
-Denoising Steps: 6it [00:30,  5.08s/it][A
-Denoising Steps: 7it [00:35,  5.09s/it][A
-Denoising Steps: 8it [00:40,  5.09s/it][A
-Denoising Steps: 9it [00:45,  5.09s/it][A
-Denoising Steps: 10it [00:50,  5.09s/it][A
-Denoising Steps: 11it [00:55,  5.09s/it][A
-Denoising Steps: 12it [01:01,  5.10s/it][A
-Denoising Steps: 13it [01:06,  5.10s/it][A
-Denoising Steps: 14it [01:11,  5.10s/it][A
-Denoising Steps: 15it [01:16,  5.10s/it][A
-Denoising Steps: 16it [01:21,  5.10s/it][A
-Denoising Steps: 17it [01:26,  5.10s/it][A
-Denoising Steps: 18it [01:31,  5.10s/it][A
-Denoising Steps: 19it [01:36,  5.09s/it][A
-Denoising Steps: 20it [01:41,  5.09s/it][A
-Denoising Steps: 21it [01:46,  5.09s/it][A
-Denoising Steps: 22it [01:51,  5.09s/it][A
-Denoising Steps: 23it [01:57,  5.09s/it][A
-Denoising Steps: 24it [02:02,  5.09s/it][A
-Denoising Steps: 25it [02:07,  5.09s/it][A
-Denoising Steps: 26it [02:12,  5.10s/it][A
-Denoising Steps: 27it [02:17,  5.10s/it][A
-Denoising Steps: 28it [02:22,  5.10s/it][A
-Denoising Steps: 29it [02:27,  5.10s/it][A
-Denoising Steps: 30it [02:32,  5.10s/it][A
-Denoising Steps: 31it [02:37,  5.10s/it][A
-Denoising Steps: 32it [02:42,  5.10s/it][A
-Denoising Steps: 33it [02:48,  5.09s/it][A
-Denoising Steps: 34it [02:53,  5.09s/it][A
-Denoising Steps: 35it [02:58,  5.09s/it][A
-Denoising Steps: 36it [03:03,  5.09s/it][A
-Denoising Steps: 37it [03:08,  5.09s/it][A
-Denoising Steps: 38it [03:13,  5.10s/it][A
-Denoising Steps: 39it [03:18,  5.10s/it][A
-Denoising Steps: 40it [03:23,  5.10s/it][A
-Denoising Steps: 41it [03:28,  5.10s/it][A
-Denoising Steps: 42it [03:33,  5.10s/it][A
-Denoising Steps: 43it [03:39,  5.10s/it][A
-Denoising Steps: 44it [03:44,  5.10s/it][A
-Denoising Steps: 45it [03:49,  5.10s/it][A
-Denoising Steps: 46it [03:54,  5.10s/it][A
-Denoising Steps: 47it [03:59,  5.09s/it][A
-Denoising Steps: 48it [04:04,  5.09s/it][A
-Denoising Steps: 49it [04:09,  5.09s/it][A
-Denoising Steps: 50it [04:14,  5.09s/it][ADenoising Steps: 50it [04:14,  5.09s/it]
-Sample Iters: 100%|██████████| 5/5 [21:42<00:00, 261.41s/it]Sample Iters: 100%|██████████| 5/5 [21:42<00:00, 260.58s/it]
-Saved in results/inference/i2v/cogvideox-i2v-lora-1000-epochs-weird. Time used: 1302.92 seconds
+Denoising Steps:   0%|          | 0/50 [00:00<?, ?it/s][A
+Denoising Steps:   2%|▏         | 1/50 [00:04<03:36,  4.41s/it][A
+Denoising Steps:   4%|▍         | 2/50 [00:08<03:29,  4.37s/it][A
+Denoising Steps:   6%|▌         | 3/50 [00:13<03:25,  4.37s/it][A
+Denoising Steps:   8%|▊         | 4/50 [00:17<03:20,  4.36s/it][A
+Denoising Steps:  10%|█         | 5/50 [00:21<03:16,  4.37s/it][A
+Denoising Steps:  12%|█▏        | 6/50 [00:26<03:12,  4.38s/it][A
+Denoising Steps:  14%|█▍        | 7/50 [00:30<03:08,  4.38s/it][A
+Denoising Steps:  16%|█▌        | 8/50 [00:35<03:04,  4.39s/it][A
+Denoising Steps:  18%|█▊        | 9/50 [00:39<03:00,  4.39s/it][A
+Denoising Steps:  20%|██        | 10/50 [00:43<02:55,  4.40s/it][A
+Denoising Steps:  22%|██▏       | 11/50 [00:48<02:51,  4.40s/it][A
+Denoising Steps:  24%|██▍       | 12/50 [00:52<02:47,  4.41s/it][A
+Denoising Steps:  26%|██▌       | 13/50 [00:57<02:43,  4.41s/it][A
+Denoising Steps:  28%|██▊       | 14/50 [01:01<02:38,  4.41s/it][A
+Denoising Steps:  30%|███       | 15/50 [01:05<02:34,  4.42s/it][A
+Denoising Steps:  32%|███▏      | 16/50 [01:10<02:30,  4.42s/it][A
+Denoising Steps:  34%|███▍      | 17/50 [01:14<02:25,  4.42s/it][A
+Denoising Steps:  36%|███▌      | 18/50 [01:19<02:21,  4.42s/it][A
+Denoising Steps:  38%|███▊      | 19/50 [01:23<02:17,  4.43s/it][A
+Denoising Steps:  40%|████      | 20/50 [01:28<02:12,  4.43s/it][A
+Denoising Steps:  42%|████▏     | 21/50 [01:32<02:08,  4.43s/it][A
+Denoising Steps:  44%|████▍     | 22/50 [01:36<02:04,  4.43s/it][A
+Denoising Steps:  46%|████▌     | 23/50 [01:41<01:59,  4.43s/it][A
+Denoising Steps:  48%|████▊     | 24/50 [01:45<01:55,  4.43s/it][A
+Denoising Steps:  50%|█████     | 25/50 [01:50<01:50,  4.43s/it][A
+Denoising Steps:  52%|█████▏    | 26/50 [01:54<01:46,  4.44s/it][A
+Denoising Steps:  54%|█████▍    | 27/50 [01:59<01:42,  4.44s/it][A
+Denoising Steps:  56%|█████▌    | 28/50 [02:03<01:37,  4.44s/it][A
+Denoising Steps:  58%|█████▊    | 29/50 [02:08<01:33,  4.44s/it][A
+Denoising Steps:  60%|██████    | 30/50 [02:12<01:28,  4.44s/it][A
+Denoising Steps:  62%|██████▏   | 31/50 [02:16<01:24,  4.44s/it][A
+Denoising Steps:  64%|██████▍   | 32/50 [02:21<01:20,  4.45s/it][A
+Denoising Steps:  66%|██████▌   | 33/50 [02:25<01:15,  4.45s/it][A
+Denoising Steps:  68%|██████▊   | 34/50 [02:30<01:11,  4.45s/it][A
+Denoising Steps:  70%|███████   | 35/50 [02:34<01:06,  4.45s/it][A
+Denoising Steps:  72%|███████▏  | 36/50 [02:39<01:02,  4.46s/it][A
+Denoising Steps:  74%|███████▍  | 37/50 [02:43<00:57,  4.46s/it][A
+Denoising Steps:  76%|███████▌  | 38/50 [02:48<00:53,  4.46s/it][A
+Denoising Steps:  78%|███████▊  | 39/50 [02:52<00:49,  4.46s/it][A
+Denoising Steps:  80%|████████  | 40/50 [02:57<00:44,  4.47s/it][A
+Denoising Steps:  82%|████████▏ | 41/50 [03:01<00:40,  4.47s/it][A
+Denoising Steps:  84%|████████▍ | 42/50 [03:06<00:35,  4.47s/it][A
+Denoising Steps:  86%|████████▌ | 43/50 [03:10<00:31,  4.48s/it][A
+Denoising Steps:  88%|████████▊ | 44/50 [03:15<00:26,  4.48s/it][A
+Denoising Steps:  90%|█████████ | 45/50 [03:19<00:22,  4.48s/it][A
+Denoising Steps:  92%|█████████▏| 46/50 [03:23<00:17,  4.49s/it][A
+Denoising Steps:  94%|█████████▍| 47/50 [03:28<00:13,  4.49s/it][A
+Denoising Steps:  96%|█████████▌| 48/50 [03:32<00:08,  4.49s/it][A
+Denoising Steps:  98%|█████████▊| 49/50 [03:37<00:04,  4.49s/it][A
+Denoising Steps: 100%|██████████| 50/50 [03:41<00:00,  4.50s/it][ADenoising Steps: 100%|██████████| 50/50 [03:41<00:00,  4.44s/it]
+Sample Iters:  20%|██        | 1/5 [03:52<15:28, 232.21s/it]
+Denoising Steps:   0%|          | 0/50 [00:00<?, ?it/s][A
+Denoising Steps:   2%|▏         | 1/50 [00:04<03:39,  4.47s/it][A
+Denoising Steps:   4%|▍         | 2/50 [00:08<03:35,  4.48s/it][A
+Denoising Steps:   6%|▌         | 3/50 [00:13<03:30,  4.49s/it][A
+Denoising Steps:   8%|▊         | 4/50 [00:17<03:26,  4.49s/it][A
+Denoising Steps:  10%|█         | 5/50 [00:22<03:22,  4.50s/it][A
+Denoising Steps:  12%|█▏        | 6/50 [00:27<03:18,  4.51s/it][A
+Denoising Steps:  14%|█▍        | 7/50 [00:31<03:14,  4.52s/it][A
+Denoising Steps:  16%|█▌        | 8/50 [00:36<03:09,  4.52s/it][A
+Denoising Steps:  18%|█▊        | 9/50 [00:40<03:05,  4.53s/it][A
+Denoising Steps:  20%|██        | 10/50 [00:45<03:01,  4.53s/it][A
+Denoising Steps:  22%|██▏       | 11/50 [00:49<02:56,  4.53s/it][A
+Denoising Steps:  24%|██▍       | 12/50 [00:54<02:52,  4.53s/it][A
+Denoising Steps:  26%|██▌       | 13/50 [00:58<02:47,  4.53s/it][A
+Denoising Steps:  28%|██▊       | 14/50 [01:03<02:43,  4.54s/it][A
+Denoising Steps:  30%|███       | 15/50 [01:07<02:38,  4.54s/it][A
+Denoising Steps:  32%|███▏      | 16/50 [01:12<02:34,  4.54s/it][A
+Denoising Steps:  34%|███▍      | 17/50 [01:16<02:29,  4.54s/it][A
+Denoising Steps:  36%|███▌      | 18/50 [01:21<02:25,  4.54s/it][A
+Denoising Steps:  38%|███▊      | 19/50 [01:26<02:20,  4.55s/it][A
+Denoising Steps:  40%|████      | 20/50 [01:30<02:16,  4.55s/it][A
+Denoising Steps:  42%|████▏     | 21/50 [01:35<02:12,  4.55s/it][A
+Denoising Steps:  44%|████▍     | 22/50 [01:39<02:07,  4.55s/it][A
+Denoising Steps:  46%|████▌     | 23/50 [01:44<02:03,  4.56s/it][A
+Denoising Steps:  48%|████▊     | 24/50 [01:48<01:58,  4.56s/it][A
+Denoising Steps:  50%|█████     | 25/50 [01:53<01:54,  4.56s/it][A
+Denoising Steps:  52%|█████▏    | 26/50 [01:57<01:49,  4.56s/it][A
+Denoising Steps:  54%|█████▍    | 27/50 [02:02<01:44,  4.56s/it][A
+Denoising Steps:  56%|█████▌    | 28/50 [02:07<01:40,  4.56s/it][A
+Denoising Steps:  58%|█████▊    | 29/50 [02:11<01:35,  4.57s/it][A
+Denoising Steps:  60%|██████    | 30/50 [02:16<01:31,  4.57s/it][A
+Denoising Steps:  62%|██████▏   | 31/50 [02:20<01:26,  4.57s/it][A
+Denoising Steps:  64%|██████▍   | 32/50 [02:25<01:22,  4.57s/it][A
+Denoising Steps:  66%|██████▌   | 33/50 [02:29<01:17,  4.57s/it][A
+Denoising Steps:  68%|██████▊   | 34/50 [02:34<01:13,  4.58s/it][A
+Denoising Steps:  70%|███████   | 35/50 [02:39<01:08,  4.58s/it][A
+Denoising Steps:  72%|███████▏  | 36/50 [02:43<01:04,  4.58s/it][A
+Denoising Steps:  74%|███████▍  | 37/50 [02:48<00:59,  4.58s/it][A
+Denoising Steps:  76%|███████▌  | 38/50 [02:52<00:54,  4.58s/it][A
+Denoising Steps:  78%|███████▊  | 39/50 [02:57<00:50,  4.58s/it][A
+Denoising Steps:  80%|████████  | 40/50 [03:01<00:45,  4.58s/it][A
+Denoising Steps:  82%|████████▏ | 41/50 [03:06<00:41,  4.58s/it][A
+Denoising Steps:  84%|████████▍ | 42/50 [03:11<00:36,  4.58s/it][A
+Denoising Steps:  86%|████████▌ | 43/50 [03:15<00:32,  4.58s/it][A
+Denoising Steps:  88%|████████▊ | 44/50 [03:20<00:27,  4.58s/it][A
+Denoising Steps:  90%|█████████ | 45/50 [03:24<00:22,  4.58s/it][A
+Denoising Steps:  92%|█████████▏| 46/50 [03:29<00:18,  4.59s/it][A
+Denoising Steps:  94%|█████████▍| 47/50 [03:34<00:13,  4.59s/it][A
+Denoising Steps:  96%|█████████▌| 48/50 [03:38<00:09,  4.59s/it][A
+Denoising Steps:  98%|█████████▊| 49/50 [03:43<00:04,  4.59s/it][A
+Denoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.59s/it][ADenoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.56s/it]
+Sample Iters:  40%|████      | 2/5 [07:50<11:46, 235.62s/it]
+Denoising Steps:   0%|          | 0/50 [00:00<?, ?it/s][A
+Denoising Steps:   2%|▏         | 1/50 [00:04<03:42,  4.55s/it][A
+Denoising Steps:   4%|▍         | 2/50 [00:09<03:38,  4.56s/it][A
+Denoising Steps:   6%|▌         | 3/50 [00:13<03:34,  4.56s/it][A
+Denoising Steps:   8%|▊         | 4/50 [00:18<03:29,  4.56s/it][A
+Denoising Steps:  10%|█         | 5/50 [00:22<03:25,  4.57s/it][A
+Denoising Steps:  12%|█▏        | 6/50 [00:27<03:21,  4.57s/it][A
+Denoising Steps:  14%|█▍        | 7/50 [00:31<03:16,  4.57s/it][A
+Denoising Steps:  16%|█▌        | 8/50 [00:36<03:12,  4.57s/it][A
+Denoising Steps:  18%|█▊        | 9/50 [00:41<03:07,  4.58s/it][A
+Denoising Steps:  20%|██        | 10/50 [00:45<03:03,  4.58s/it][A
+Denoising Steps:  22%|██▏       | 11/50 [00:50<02:58,  4.58s/it][A
+Denoising Steps:  24%|██▍       | 12/50 [00:54<02:53,  4.57s/it][A
+Denoising Steps:  26%|██▌       | 13/50 [00:59<02:49,  4.58s/it][A
+Denoising Steps:  28%|██▊       | 14/50 [01:04<02:44,  4.57s/it][A
+Denoising Steps:  30%|███       | 15/50 [01:08<02:40,  4.57s/it][A
+Denoising Steps:  32%|███▏      | 16/50 [01:13<02:35,  4.58s/it][A
+Denoising Steps:  34%|███▍      | 17/50 [01:17<02:31,  4.58s/it][A
+Denoising Steps:  36%|███▌      | 18/50 [01:22<02:26,  4.59s/it][A
+Denoising Steps:  38%|███▊      | 19/50 [01:26<02:22,  4.59s/it][A
+Denoising Steps:  40%|████      | 20/50 [01:31<02:17,  4.60s/it][A
+Denoising Steps:  42%|████▏     | 21/50 [01:36<02:13,  4.60s/it][A
+Denoising Steps:  44%|████▍     | 22/50 [01:40<02:08,  4.59s/it][A
+Denoising Steps:  46%|████▌     | 23/50 [01:45<02:03,  4.58s/it][A
+Denoising Steps:  48%|████▊     | 24/50 [01:49<01:58,  4.58s/it][A
+Denoising Steps:  50%|█████     | 25/50 [01:54<01:54,  4.57s/it][A
+Denoising Steps:  52%|█████▏    | 26/50 [01:58<01:49,  4.56s/it][A
+Denoising Steps:  54%|█████▍    | 27/50 [02:03<01:44,  4.55s/it][A
+Denoising Steps:  56%|█████▌    | 28/50 [02:08<01:39,  4.54s/it][A
+Denoising Steps:  58%|█████▊    | 29/50 [02:12<01:35,  4.53s/it][A
+Denoising Steps:  60%|██████    | 30/50 [02:17<01:30,  4.53s/it][A
+Denoising Steps:  62%|██████▏   | 31/50 [02:21<01:25,  4.52s/it][A
+Denoising Steps:  64%|██████▍   | 32/50 [02:26<01:21,  4.52s/it][A
+Denoising Steps:  66%|██████▌   | 33/50 [02:30<01:16,  4.51s/it][A
+Denoising Steps:  68%|██████▊   | 34/50 [02:35<01:12,  4.51s/it][A
+Denoising Steps:  70%|███████   | 35/50 [02:39<01:07,  4.51s/it][A
+Denoising Steps:  72%|███████▏  | 36/50 [02:44<01:03,  4.51s/it][A
+Denoising Steps:  74%|███████▍  | 37/50 [02:48<00:58,  4.51s/it][A
+Denoising Steps:  76%|███████▌  | 38/50 [02:53<00:54,  4.51s/it][A
+Denoising Steps:  78%|███████▊  | 39/50 [02:57<00:49,  4.51s/it][A
+Denoising Steps:  80%|████████  | 40/50 [03:02<00:45,  4.51s/it][A
+Denoising Steps:  82%|████████▏ | 41/50 [03:06<00:40,  4.51s/it][A
+Denoising Steps:  84%|████████▍ | 42/50 [03:11<00:36,  4.51s/it][A
+Denoising Steps:  86%|████████▌ | 43/50 [03:15<00:31,  4.51s/it][A
+Denoising Steps:  88%|████████▊ | 44/50 [03:20<00:27,  4.51s/it][A
+Denoising Steps:  90%|█████████ | 45/50 [03:24<00:22,  4.51s/it][A
+Denoising Steps:  92%|█████████▏| 46/50 [03:29<00:18,  4.52s/it][A
+Denoising Steps:  94%|█████████▍| 47/50 [03:33<00:13,  4.52s/it][A
+Denoising Steps:  96%|█████████▌| 48/50 [03:38<00:09,  4.52s/it][A
+Denoising Steps:  98%|█████████▊| 49/50 [03:42<00:04,  4.52s/it][A
+Denoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.52s/it][ADenoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.54s/it]
+Sample Iters:  60%|██████    | 3/5 [11:47<07:52, 236.26s/it]
+Denoising Steps:   0%|          | 0/50 [00:00<?, ?it/s][A
+Denoising Steps:   2%|▏         | 1/50 [00:04<03:40,  4.50s/it][A
+Denoising Steps:   4%|▍         | 2/50 [00:09<03:36,  4.50s/it][A
+Denoising Steps:   6%|▌         | 3/50 [00:13<03:31,  4.51s/it][A
+Denoising Steps:   8%|▊         | 4/50 [00:18<03:27,  4.51s/it][A
+Denoising Steps:  10%|█         | 5/50 [00:22<03:23,  4.51s/it][A
+Denoising Steps:  12%|█▏        | 6/50 [00:27<03:18,  4.52s/it][A
+Denoising Steps:  14%|█▍        | 7/50 [00:31<03:14,  4.52s/it][A
+Denoising Steps:  16%|█▌        | 8/50 [00:36<03:10,  4.53s/it][A
+Denoising Steps:  18%|█▊        | 9/50 [00:40<03:05,  4.53s/it][A
+Denoising Steps:  20%|██        | 10/50 [00:45<03:01,  4.54s/it][A
+Denoising Steps:  22%|██▏       | 11/50 [00:49<02:56,  4.54s/it][A
+Denoising Steps:  24%|██▍       | 12/50 [00:54<02:52,  4.54s/it][A
+Denoising Steps:  26%|██▌       | 13/50 [00:58<02:48,  4.54s/it][A
+Denoising Steps:  28%|██▊       | 14/50 [01:03<02:43,  4.55s/it][A
+Denoising Steps:  30%|███       | 15/50 [01:07<02:39,  4.55s/it][A
+Denoising Steps:  32%|███▏      | 16/50 [01:12<02:34,  4.55s/it][A
+Denoising Steps:  34%|███▍      | 17/50 [01:17<02:30,  4.55s/it][A
+Denoising Steps:  36%|███▌      | 18/50 [01:21<02:25,  4.55s/it][A
+Denoising Steps:  38%|███▊      | 19/50 [01:26<02:21,  4.55s/it][A
+Denoising Steps:  40%|████      | 20/50 [01:30<02:16,  4.55s/it][A
+Denoising Steps:  42%|████▏     | 21/50 [01:35<02:12,  4.55s/it][A
+Denoising Steps:  44%|████▍     | 22/50 [01:39<02:07,  4.55s/it][A
+Denoising Steps:  46%|████▌     | 23/50 [01:44<02:02,  4.55s/it][A
+Denoising Steps:  48%|████▊     | 24/50 [01:48<01:58,  4.56s/it][A
+Denoising Steps:  50%|█████     | 25/50 [01:53<01:53,  4.56s/it][A
+Denoising Steps:  52%|█████▏    | 26/50 [01:58<01:49,  4.56s/it][A
+Denoising Steps:  54%|█████▍    | 27/50 [02:02<01:44,  4.56s/it][A
+Denoising Steps:  56%|█████▌    | 28/50 [02:07<01:40,  4.57s/it][A
+Denoising Steps:  58%|█████▊    | 29/50 [02:11<01:35,  4.57s/it][A
+Denoising Steps:  60%|██████    | 30/50 [02:16<01:31,  4.57s/it][A
+Denoising Steps:  62%|██████▏   | 31/50 [02:20<01:26,  4.57s/it][A
+Denoising Steps:  64%|██████▍   | 32/50 [02:25<01:22,  4.57s/it][A
+Denoising Steps:  66%|██████▌   | 33/50 [02:30<01:17,  4.57s/it][A
+Denoising Steps:  68%|██████▊   | 34/50 [02:34<01:13,  4.57s/it][A
+Denoising Steps:  70%|███████   | 35/50 [02:39<01:08,  4.57s/it][A
+Denoising Steps:  72%|███████▏  | 36/50 [02:43<01:04,  4.57s/it][A
+Denoising Steps:  74%|███████▍  | 37/50 [02:48<00:59,  4.58s/it][A
+Denoising Steps:  76%|███████▌  | 38/50 [02:52<00:54,  4.58s/it][A
+Denoising Steps:  78%|███████▊  | 39/50 [02:57<00:50,  4.58s/it][A
+Denoising Steps:  80%|████████  | 40/50 [03:02<00:45,  4.58s/it][A
+Denoising Steps:  82%|████████▏ | 41/50 [03:06<00:41,  4.58s/it][A
+Denoising Steps:  84%|████████▍ | 42/50 [03:11<00:36,  4.58s/it][A
+Denoising Steps:  86%|████████▌ | 43/50 [03:15<00:32,  4.58s/it][A
+Denoising Steps:  88%|████████▊ | 44/50 [03:20<00:27,  4.58s/it][A
+Denoising Steps:  90%|█████████ | 45/50 [03:25<00:22,  4.58s/it][A
+Denoising Steps:  92%|█████████▏| 46/50 [03:29<00:18,  4.58s/it][A
+Denoising Steps:  94%|█████████▍| 47/50 [03:34<00:13,  4.58s/it][A
+Denoising Steps:  96%|█████████▌| 48/50 [03:38<00:09,  4.58s/it][A
+Denoising Steps:  98%|█████████▊| 49/50 [03:43<00:04,  4.59s/it][A
+Denoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.59s/it][ADenoising Steps: 100%|██████████| 50/50 [03:47<00:00,  4.56s/it]
+Sample Iters:  80%|████████  | 4/5 [15:45<03:57, 237.03s/it]
+Denoising Steps:   0%|          | 0/50 [00:00<?, ?it/s][A
+Denoising Steps:   2%|▏         | 1/50 [00:04<03:43,  4.55s/it][A
+Denoising Steps:   4%|▍         | 2/50 [00:09<03:38,  4.56s/it][A
+Denoising Steps:   6%|▌         | 3/50 [00:13<03:34,  4.56s/it][A
+Denoising Steps:   8%|▊         | 4/50 [00:18<03:29,  4.56s/it][A
+Denoising Steps:  10%|█         | 5/50 [00:22<03:25,  4.57s/it][A
+Denoising Steps:  12%|█▏        | 6/50 [00:27<03:20,  4.57s/it][A
+Denoising Steps:  14%|█▍        | 7/50 [00:31<03:16,  4.57s/it][A
+Denoising Steps:  16%|█▌        | 8/50 [00:36<03:12,  4.57s/it][A
+Denoising Steps:  18%|█▊        | 9/50 [00:41<03:07,  4.57s/it][A
+Denoising Steps:  20%|██        | 10/50 [00:45<03:03,  4.58s/it][A
+Denoising Steps:  22%|██▏       | 11/50 [00:50<02:58,  4.58s/it][A
+Denoising Steps:  24%|██▍       | 12/50 [00:54<02:54,  4.58s/it][A
+Denoising Steps:  26%|██▌       | 13/50 [00:59<02:49,  4.59s/it][A
+Denoising Steps:  28%|██▊       | 14/50 [01:04<02:45,  4.59s/it][A
+Denoising Steps:  30%|███       | 15/50 [01:08<02:40,  4.60s/it][A
+Denoising Steps:  32%|███▏      | 16/50 [01:13<02:36,  4.60s/it][A
+Denoising Steps:  34%|███▍      | 17/50 [01:17<02:31,  4.60s/it][A
+Denoising Steps:  36%|███▌      | 18/50 [01:22<02:27,  4.60s/it][A
+Denoising Steps:  38%|███▊      | 19/50 [01:27<02:22,  4.61s/it][A
+Denoising Steps:  40%|████      | 20/50 [01:31<02:18,  4.61s/it][A
+Denoising Steps:  42%|████▏     | 21/50 [01:36<02:13,  4.61s/it][A
+Denoising Steps:  44%|████▍     | 22/50 [01:40<02:09,  4.61s/it][A
+Denoising Steps:  46%|████▌     | 23/50 [01:45<02:04,  4.61s/it][A
+Denoising Steps:  48%|████▊     | 24/50 [01:50<01:59,  4.61s/it][A
+Denoising Steps:  50%|█████     | 25/50 [01:54<01:55,  4.61s/it][A
+Denoising Steps:  52%|█████▏    | 26/50 [01:59<01:50,  4.61s/it][A
+Denoising Steps:  54%|█████▍    | 27/50 [02:04<01:46,  4.61s/it][A
+Denoising Steps:  56%|█████▌    | 28/50 [02:08<01:41,  4.61s/it][A
+Denoising Steps:  58%|█████▊    | 29/50 [02:13<01:36,  4.61s/it][A
+Denoising Steps:  60%|██████    | 30/50 [02:17<01:32,  4.61s/it][A
+Denoising Steps:  62%|██████▏   | 31/50 [02:22<01:27,  4.62s/it][A
+Denoising Steps:  64%|██████▍   | 32/50 [02:27<01:23,  4.62s/it][A
+Denoising Steps:  66%|██████▌   | 33/50 [02:31<01:18,  4.62s/it][A
+Denoising Steps:  68%|██████▊   | 34/50 [02:36<01:13,  4.62s/it][A
+Denoising Steps:  70%|███████   | 35/50 [02:40<01:09,  4.61s/it][A
+Denoising Steps:  72%|███████▏  | 36/50 [02:45<01:04,  4.60s/it][A
+Denoising Steps:  74%|███████▍  | 37/50 [02:50<00:59,  4.60s/it][A
+Denoising Steps:  76%|███████▌  | 38/50 [02:54<00:55,  4.59s/it][A
+Denoising Steps:  78%|███████▊  | 39/50 [02:59<00:50,  4.58s/it][A
+Denoising Steps:  80%|████████  | 40/50 [03:03<00:45,  4.57s/it][A
+Denoising Steps:  82%|████████▏ | 41/50 [03:08<00:41,  4.57s/it][A
+Denoising Steps:  84%|████████▍ | 42/50 [03:12<00:36,  4.56s/it][A
+Denoising Steps:  86%|████████▌ | 43/50 [03:17<00:31,  4.55s/it][A
+Denoising Steps:  88%|████████▊ | 44/50 [03:21<00:27,  4.55s/it][A
+Denoising Steps:  90%|█████████ | 45/50 [03:26<00:22,  4.54s/it][A
+Denoising Steps:  92%|█████████▏| 46/50 [03:31<00:18,  4.54s/it][A
+Denoising Steps:  94%|█████████▍| 47/50 [03:35<00:13,  4.54s/it][A
+Denoising Steps:  96%|█████████▌| 48/50 [03:40<00:09,  4.53s/it][A
+Denoising Steps:  98%|█████████▊| 49/50 [03:44<00:04,  4.53s/it][A
+Denoising Steps: 100%|██████████| 50/50 [03:49<00:00,  4.53s/it][ADenoising Steps: 100%|██████████| 50/50 [03:49<00:00,  4.58s/it]
+Sample Iters: 100%|██████████| 5/5 [19:44<00:00, 237.75s/it]Sample Iters: 100%|██████████| 5/5 [19:44<00:00, 236.90s/it]
+Saved in results/inference/i2v/cogvideox-i2v-fullft-20250501170202. Time used: 1184.49 seconds

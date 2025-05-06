@@ -18,6 +18,7 @@ samples/
 Dataset/
 output/
 outputs/
+logs/
 data
 
 HPSv2/

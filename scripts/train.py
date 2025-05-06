@@ -277,12 +277,34 @@ if __name__ == "__main__":
     
     wandb.init(
         project="Expert_Demos_Cogvideo",
-        name="cogvideox_i2v_1" if trainer.global_rank == 0 else None,
+        name="cogvideox_i2v_3" if trainer.global_rank == 0 else None,
         mode="online" if trainer.global_rank == 0 else "disabled",
         reinit=True,            # safe if you re-launch in the same process
     )
-    # wandb.init(project="Expert_Demos_Cogvideo", id="u37epfqv", resume="must")
+    '''
+    # wandb.init(project="Expert_Demos_Cogvideo", id="1kdm0s8n", resume="must")
+    
+    RUN_ID   = "1kdm0s8n"                  # the 8-char run id you got from wandb
+    RUN_NAME = "cogvideox_i2v_2"           # any display name you like
 
+    if trainer.global_rank == 0:
+        # real (online) run that uploads data and resumes the history
+        wandb.init(
+            project = "Expert_Demos_Cogvideo",
+            name    = RUN_NAME,            # will be ignored if run already has a name
+            id      = RUN_ID,
+            resume  = "must",              # fail if the id does not exist
+            reinit  = True                 # safe if you call wandb.init again
+        )
+    else:
+        # worker ranks start a disabled stub so wandb.log() is a no-op
+        wandb.init(
+            project = "Expert_Demos_Cogvideo",
+            id      = RUN_ID,              # must match so history syncs correctly
+            resume  = "allow",             # doesn't matter, run is disabled
+            mode    = "disabled"
+        )
+    '''
     ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if args.train:
