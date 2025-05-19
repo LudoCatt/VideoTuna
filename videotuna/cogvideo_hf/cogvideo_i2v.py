@@ -181,13 +181,15 @@ class CogVideoXI2V(CogVideoXWorkFlow):
         loss = loss.mean()
 
         # Wandb logging
-        log_dict = {
-            "loss": loss,
-            "log_loss": loss.log()
-        }
-        
-        if self.trainer.is_global_zero:          
-            wandb.log(log_dict, step=self.global_step)
+        if self.trainer.is_global_zero:
+            wandb.log(
+                {
+                "global_step": self.global_step,
+                "loss":        loss.item(),         
+                "log_loss":    loss.log().item(),
+                },
+                commit=True
+            )
 
         return loss
 

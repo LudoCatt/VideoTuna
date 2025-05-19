@@ -19,11 +19,11 @@ conda activate videotuna
 cd ~/VideoTuna
 
 config=configs/004_cogvideox/cogvideo5b-i2v-fullft.yaml
-ckpt=/cluster/scratch/lcattaneo/results/train/20250430195636_cogvideox_i2v_5b_fullft/checkpoints/last.ckpt/checkpoint/mp_rank_00_model_states.pt
+ckpt=/cluster/scratch/lcattaneo/results/train/20250508030007_cogvideox_i2v_5b_fullft/checkpoints/last.ckpt/checkpoint/mp_rank_00_model_states.pt
 prompt_dir=inputs/i2v/576x1024
 
 current_time=$(date +%Y%m%d%H%M%S)
-savedir="results/inference/i2v/cogvideox-i2v-fullft-$current_time"
+savedir="results/inference/i2v/cogvideox-i2v-fullft-400-epochs-weird"
 
 python3 scripts/inference_cogvideo.py \
     --config $config \

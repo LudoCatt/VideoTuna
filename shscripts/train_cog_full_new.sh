@@ -29,5 +29,6 @@ python scripts/train.py -t \
         --base   "$CONFIG" \
         --logdir "$RESROOT" \
         --name   "$RUNNAME" \
+        --ckpt "/cluster/scratch/lcattaneo/results/train/20250507025951_cogvideox_i2v_5b_fullft/checkpoints/last.ckpt/checkpoint/mp_rank_00_model_states.pt" \
         --devices 0,1 \
         lightning.trainer.num_nodes=1

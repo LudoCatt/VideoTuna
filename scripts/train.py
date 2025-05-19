@@ -274,7 +274,7 @@ if __name__ == "__main__":
                 p.data = p.data.contiguous()
 
     ## wandb setup >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    
+    '''
     wandb.init(
         project="Expert_Demos_Cogvideo",
         name="cogvideox_i2v_3" if trainer.global_rank == 0 else None,
@@ -284,27 +284,30 @@ if __name__ == "__main__":
     '''
     # wandb.init(project="Expert_Demos_Cogvideo", id="1kdm0s8n", resume="must")
     
-    RUN_ID   = "1kdm0s8n"                  # the 8-char run id you got from wandb
-    RUN_NAME = "cogvideox_i2v_2"           # any display name you like
+    RUN_ID   = "posc7lgt"        
+    RUN_NAME = "cogvideox_i2v_3"  
 
     if trainer.global_rank == 0:
-        # real (online) run that uploads data and resumes the history
-        wandb.init(
+        run = wandb.init(
             project = "Expert_Demos_Cogvideo",
-            name    = RUN_NAME,            # will be ignored if run already has a name
+            name    = RUN_NAME,
             id      = RUN_ID,
-            resume  = "must",              # fail if the id does not exist
-            reinit  = True                 # safe if you call wandb.init again
+            resume  = "must", 
+            reinit  = True    
         )
+
+        wandb.define_metric("global_step")
+        wandb.define_metric("*", step_metric="global_step")
+
     else:
-        # worker ranks start a disabled stub so wandb.log() is a no-op
+        # ranks >0 get a disabled no-op run but MUST share the same id
         wandb.init(
             project = "Expert_Demos_Cogvideo",
-            id      = RUN_ID,              # must match so history syncs correctly
-            resume  = "allow",             # doesn't matter, run is disabled
+            id      = RUN_ID,
+            resume  = "allow",
             mode    = "disabled"
         )
-    '''
+    
     ## >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     if args.train:

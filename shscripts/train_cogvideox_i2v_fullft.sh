@@ -1,36 +1,35 @@
 #!/bin/bash
-#SBATCH --job-name=cog_lora               # Job name
-#SBATCH --output=cog_lora.txt             # Output file
-#SBATCH --error=cog_lora.txt              # Error file
-#SBATCH --time=24:00:00                   # Max runtime (10 hours)
-#SBATCH --ntasks=1                        # Number of tasks
-#SBATCH --cpus-per-task=8                 # (rule of thumb ≈ 4 CPU cores / GPU)
-#SBATCH --gpus=2                          # Request 2 GPUs
-#SBATCH --gres=gpumem:79g                 # Each GPU must have ≥ 79 GB HBM
-#SBATCH --partition=gpu                   # Use the GPU partition
-#SBATCH --mem-per-cpu=79G                 # System RAM per CPU core
+#SBATCH --job-name=cog_fullft_5b 
+#SBATCH --partition=gpu   
+#SBATCH --time=24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gpus=2
+#SBATCH --gres=gpumem:80g 
+#SBATCH --cpus-per-task=16
+#SBATCH --mem-per-cpu=13G
+#SBATCH --output=logs/%x_%j_out.txt
+#SBATCH --error=logs/%x_%j_err.txt
 
-# Load the Conda environment
-export PATH=~/miniconda3/bin:$PATH
-source ~/miniconda3/etc/profile.d/conda.sh
+# ───── Environment ────────────────────────────────────────────────
+source "$HOME/miniconda3/etc/profile.d/conda.sh"
 conda activate videotuna
-
 export TOKENIZERS_PARALLELISM=false
 
-# dependencies
-CONFIG="configs/004_cogvideox/cogvideo5b-i2v-fullft.yaml"   # experiment config
+# Tell Lightning to IGNORE Slurm and spawn workers itself
+export SLURM_JOB_NAME=interactive      # any of {interactive,bash,sh} works
 
-# exp saving directory: ${RESROOT}/${CURRENT_TIME}_${EXPNAME}
-RESROOT="/cluster/scratch/lcattaneo/results/train"              # experiment saving directory
-EXPNAME="cogvideox_i2v_5b_fullft"   # experiment name
-CURRENT_TIME=$(date +%Y%m%d%H%M%S)  # current time
+# ───── Parameters ────────────────────────────────────────────────
+CONFIG=configs/004_cogvideox/cogvideo5b-i2v-fullft.yaml
+RESROOT=/cluster/scratch/$USER/results/train
+RUNNAME="$(date +%Y%m%d%H%M%S)_cogvideox_i2v_5b_fullft"
 
-# run
-python scripts/train.py \
--t \
---base $CONFIG \
---logdir $RESROOT \
---name "$CURRENT_TIME"_$EXPNAME \
---devices '0,1' \
-lightning.trainer.num_nodes=1 \
-# --auto_resume
+# ───── Launch Lightning (one process will spawn two ranks) ───────
+python scripts/train.py -t \
+        --base   "$CONFIG" \
+        --logdir "$RESROOT" \
+        --name   "$RUNNAME" \
+        --ckpt "/cluster/scratch/lcattaneo/results/train/20250501220600_cogvideox_i2v_5b_fullft/checkpoints/epoch=140.ckpt/checkpoint/mp_rank_00_model_states.pt" \
+        --devices 0,1 \
+        lightning.trainer.num_nodes=1
+

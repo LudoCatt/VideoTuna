@@ -1,5 +1,5 @@
-bulky humanoid robot walking forward on a reflective checkerboard in side view
-humanoid robot walks forward on a reflective checkerboard floor in side view
-slim humanoid robot walks forward in side view on white background
-quadruped robot walks forward across a reflective checkerboard floor in side view
-humanoid robot walks forward across reflective checkerboard floor 
+bulky humanoid robot stops walking after one second on a reflective checkerboard in side view
+humanoid robot turns right 90 degrees on a reflective checkerboard floor
+slim humanoid robot lifts arm and waves on white background
+quadruped robot walks towards the camera on reflective checkerboard floor
+humanoid robot walks forward across lifting both arms reflective checkerboard floor 
